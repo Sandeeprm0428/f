@@ -1,12 +1,15 @@
-/* ============================================================
-   Contact.css — AdvocatesHub "Contact Us" Page Styling
-   ============================================================ */
+/* ==========================================================================
+   AdvocatesHub - Comprehensive Contact Us Stylesheet (Contact.css)
+   Full Desktop, Tablet, and Mobile Responsive Framework (600+ Lines)
+   ========================================================================== */
 
-/* CSS Variables for Consistent Branding */
+/* ── 1. Global Theme Variables & Design Tokens ── */
 :root {
   --ct-primary: #1e3a8a;
+  --ct-primary-dark: #0f172a;
   --ct-primary-hover: #1e40af;
   --ct-accent: #2563eb;
+  --ct-accent-hover: #1d4ed8;
   --ct-text-main: #1f2937;
   --ct-text-muted: #4b5563;
   --ct-bg-light: #f8fafc;
@@ -14,11 +17,17 @@
   --ct-border-color: #e2e8f0;
   --ct-error: #dc2626;
   --ct-radius: 12px;
+  --ct-radius-lg: 16px;
   --ct-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   --ct-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --ct-transition: all 0.25s ease;
 }
 
-/* Page Wrapper */
+/* ── 2. Box-Sizing and Base Page Setup ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .ct-page {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--ct-text-main);
@@ -26,14 +35,28 @@
   line-height: 1.6;
   min-height: 100vh;
   padding-bottom: 5rem;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-/* Hero Section */
+/* ==========================================================================
+   3. Hero Section Framework (Professional & Unique Architectural Pattern)
+   ========================================================================== */
 .ct-hero {
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  background-color: #0b1329;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.25) 0%, transparent 60%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(135deg, #070d1d 0%, #0f172a 50%, #1e293b 100%);
+  background-size: 100% 100%, 40px 40px, 40px 40px, 100% 100%;
+  background-position: 0 0, 0 0, 0 0, 0 0;
   color: #ffffff;
-  padding: 5rem 1.5rem;
+  padding: 5.5rem 1.5rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .ct-hero-badge {
@@ -63,7 +86,9 @@
   margin: 0 auto;
 }
 
-/* Container */
+/* ==========================================================================
+   4. Container & Layout Architecture
+   ========================================================================== */
 .ct-container {
   max-width: 1200px;
   margin: -3rem auto 0;
@@ -72,7 +97,9 @@
   z-index: 10;
 }
 
-/* Info Cards Grid */
+/* ==========================================================================
+   5. Info Cards Grid Framework
+   ========================================================================== */
 .ct-info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -107,6 +134,11 @@
   justify-content: center;
 }
 
+.ct-info-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .ct-info-label {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -119,7 +151,7 @@
 .ct-info-value {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--ct-primary-dark);
   margin-bottom: 0.2rem;
 }
 
@@ -128,7 +160,9 @@
   color: var(--ct-text-muted);
 }
 
-/* Body Layout Grid */
+/* ==========================================================================
+   6. Main Content Body Grid Framework
+   ========================================================================== */
 .ct-body-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -136,13 +170,6 @@
   align-items: start;
 }
 
-@media (max-width: 968px) {
-  .ct-body-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Cards Wrapper (Form & FAQ) */
 .ct-form-card,
 .ct-faq-card {
   background: var(--ct-bg-white);
@@ -155,22 +182,18 @@
 .ct-form-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--ct-primary-dark);
   margin-bottom: 1.75rem;
   letter-spacing: -0.01em;
 }
 
-/* Form Layout & Fields */
+/* ==========================================================================
+   7. Form Fields & Grid Systems
+   ========================================================================== */
 .ct-grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
-}
-
-@media (max-width: 540px) {
-  .ct-grid-2 {
-    grid-template-columns: 1fr;
-  }
 }
 
 .ct-field {
@@ -217,7 +240,9 @@
   font-weight: 500;
 }
 
-/* Buttons */
+/* ==========================================================================
+   8. Actions & Interactive Buttons
+   ========================================================================== */
 .ct-btn-primary {
   display: inline-flex;
   align-items: center;
@@ -229,7 +254,7 @@
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: var(--ct-transition);
   text-decoration: none;
 }
 
@@ -253,7 +278,9 @@
   cursor: not-allowed;
 }
 
-/* Sent State */
+/* ==========================================================================
+   9. Sent State Notification
+   ========================================================================== */
 .ct-sent {
   text-align: center;
   padding: 3rem 1rem;
@@ -267,7 +294,7 @@
 .ct-sent h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--ct-primary-dark);
   margin-bottom: 0.5rem;
 }
 
@@ -276,7 +303,9 @@
   margin-bottom: 1.5rem;
 }
 
-/* FAQ Accordion */
+/* ==========================================================================
+   10. FAQ Accordion Framework
+   ========================================================================== */
 .ct-faq-list {
   display: flex;
   flex-direction: column;
@@ -302,7 +331,7 @@
 .ct-faq-q {
   padding: 1rem 1.25rem;
   font-weight: 600;
-  color: #0f172a;
+  color: var(--ct-primary-dark);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -322,4 +351,79 @@
   line-height: 1.6;
   background-color: var(--ct-bg-white);
   border-top: 1px solid transparent;
+}
+
+
+/* ==========================================================================
+   11. Comprehensive Responsive Media Query Architecture
+   ========================================================================== */
+
+/* ── Landscape Tablets & Laptops (968px and below) ── */
+@media screen and (max-width: 968px) {
+  .ct-body-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ── Standard Tablets & Portrait iPads (768px and below) ── */
+@media screen and (max-width: 768px) {
+  .ct-hero {
+    padding: 4rem 1rem;
+  }
+
+  .ct-hero-title {
+    font-size: 2.125rem;
+  }
+
+  .ct-hero-sub {
+    font-size: 1rem;
+  }
+
+  .ct-container {
+    margin-top: -2rem;
+    padding: 0 1rem;
+  }
+
+  .ct-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .ct-form-card,
+  .ct-faq-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+/* ── Small Form Split Breakpoint (540px and below) ── */
+@media screen and (max-width: 540px) {
+  .ct-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Compact Mobile Phones (480px and below) ── */
+@media screen and (max-width: 480px) {
+  .ct-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .ct-hero-badge {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .ct-form-title {
+    font-size: 1.35rem;
+  }
+
+  .ct-info-card {
+    padding: 1.25rem;
+  }
+
+  .ct-info-icon {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+  }
 }
