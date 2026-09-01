@@ -1,0 +1,245 @@
+/* ==========================================
+   Law4u — Profile.css (Advocate Profile Styles)
+   ========================================== */
+
+.lw-profile-page {
+  padding: 40px 20px;
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.lw-profile-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.lw-profile-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+/* Header Section */
+.lw-profile-header {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  padding: 36px 32px;
+  color: #ffffff;
+}
+
+.lw-profile-header-content {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.lw-profile-avatar {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  border: 3px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.lw-profile-name {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+}
+
+.lw-profile-spec {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.lw-profile-meta {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Body Content Section */
+.lw-profile-body {
+  padding: 32px;
+}
+
+/* Quick Stats Grid */
+.lw-profile-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.lw-stat-box {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+
+.lw-stat-box:hover {
+  border-color: #2563eb;
+}
+
+.lw-stat-title {
+  display: block;
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.lw-stat-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Sections (About & Languages) */
+.lw-profile-section {
+  margin-bottom: 28px;
+}
+
+.lw-profile-subtitle {
+  margin: 0 0 10px 0;
+  color: #111827;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.lw-profile-bio {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Language Badges */
+.lw-lang-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lw-lang-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid #bfdbfe;
+}
+
+/* Contact Info Grid */
+.lw-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.lw-contact-box {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.lw-contact-label {
+  display: block;
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.lw-contact-value {
+  font-weight: 700;
+  color: #111827;
+  font-size: 1rem;
+}
+
+/* Action Buttons */
+.lw-profile-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 24px;
+}
+
+.lw-btn-book {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+.lw-btn-book:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.lw-btn-back {
+  background: transparent;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.lw-btn-back:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+/* Responsive Scaling */
+@media (max-width: 640px) {
+  .lw-profile-header {
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .lw-profile-header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .lw-profile-body {
+    padding: 20px;
+  }
+  .lw-profile-actions {
+    flex-direction: column-reverse;
+  }
+  .lw-btn-book, .lw-btn-back {
+    width: 100%;
+    text-align: center;
+  }
+}

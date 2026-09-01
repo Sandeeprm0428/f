@@ -1,0 +1,325 @@
+/* ============================================================
+   Contact.css — AdvocatesHub "Contact Us" Page Styling
+   ============================================================ */
+
+/* CSS Variables for Consistent Branding */
+:root {
+  --ct-primary: #1e3a8a;
+  --ct-primary-hover: #1e40af;
+  --ct-accent: #2563eb;
+  --ct-text-main: #1f2937;
+  --ct-text-muted: #4b5563;
+  --ct-bg-light: #f8fafc;
+  --ct-bg-white: #ffffff;
+  --ct-border-color: #e2e8f0;
+  --ct-error: #dc2626;
+  --ct-radius: 12px;
+  --ct-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --ct-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Page Wrapper */
+.ct-page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ct-text-main);
+  background-color: var(--ct-bg-light);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+/* Hero Section */
+.ct-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: #ffffff;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.ct-hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ct-hero-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.ct-hero-sub {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Container */
+.ct-container {
+  max-width: 1200px;
+  margin: -3rem auto 0;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Info Cards Grid */
+.ct-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.ct-info-card {
+  background: var(--ct-bg-white);
+  padding: 1.75rem;
+  border-radius: var(--ct-radius);
+  box-shadow: var(--ct-shadow);
+  border: 1px solid var(--ct-border-color);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ct-info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ct-shadow-hover);
+}
+
+.ct-info-icon {
+  font-size: 2rem;
+  background: #eff6ff;
+  padding: 0.75rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ct-info-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ct-text-muted);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.ct-info-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.2rem;
+}
+
+.ct-info-hint {
+  font-size: 0.85rem;
+  color: var(--ct-text-muted);
+}
+
+/* Body Layout Grid */
+.ct-body-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 968px) {
+  .ct-body-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cards Wrapper (Form & FAQ) */
+.ct-form-card,
+.ct-faq-card {
+  background: var(--ct-bg-white);
+  padding: 2.5rem;
+  border-radius: var(--ct-radius);
+  box-shadow: var(--ct-shadow);
+  border: 1px solid var(--ct-border-color);
+}
+
+.ct-form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+/* Form Layout & Fields */
+.ct-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 540px) {
+  .ct-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ct-field {
+  margin-bottom: 1.25rem;
+}
+
+.ct-field label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ct-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.ct-field input,
+.ct-field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--ct-border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--ct-text-main);
+  background-color: var(--ct-bg-white);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.ct-field input:focus,
+.ct-field textarea:focus {
+  border-color: var(--ct-accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.ct-field input:disabled,
+.ct-field textarea:disabled {
+  background-color: var(--ct-bg-light);
+  cursor: not-allowed;
+}
+
+.ct-err {
+  font-size: 0.8125rem;
+  color: var(--ct-error);
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+/* Buttons */
+.ct-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ct-accent);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+}
+
+.ct-btn-primary:hover {
+  background-color: var(--ct-primary-hover);
+}
+
+.ct-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.ct-btn-lg {
+  width: 100%;
+  padding: 0.875rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.ct-btn-primary:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* Sent State */
+.ct-sent {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.ct-sent-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.ct-sent h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.ct-sent p {
+  color: var(--ct-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* FAQ Accordion */
+.ct-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ct-faq-item {
+  border: 1px solid var(--ct-border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.ct-faq-item:hover {
+  border-color: #cbd5e1;
+}
+
+.ct-faq-item.open {
+  border-color: var(--ct-accent);
+}
+
+.ct-faq-q {
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--ct-bg-white);
+}
+
+.ct-faq-arrow {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--ct-accent);
+}
+
+.ct-faq-a {
+  padding: 0 1.25rem 1rem 1.25rem;
+  color: var(--ct-text-muted);
+  font-size: 0.925rem;
+  line-height: 1.6;
+  background-color: var(--ct-bg-white);
+  border-top: 1px solid transparent;
+}

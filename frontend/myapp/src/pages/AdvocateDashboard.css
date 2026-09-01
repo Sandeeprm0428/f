@@ -1,0 +1,847 @@
+/* ============================================================
+   AdvocateDashboard.css & Modals Stylesheet
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Page Layout ─────────────────────────────────────────── */
+.ad-page {
+  min-height: 100vh;
+  background: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top Bar ─────────────────────────────────────────────── */
+.ad-topbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.ad-logo {
+  font-size: 24px;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.ad-logout-btn {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ad-logout-btn:hover {
+  background: #fee2e2;
+}
+
+/* ── Container & Cards ───────────────────────────────────── */
+.ad-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ad-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
+  padding: 32px;
+}
+
+.ad-notfound {
+  text-align: center;
+  max-width: 440px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ad-notfound h2 {
+  color: #1e293b;
+  font-size: 22px;
+}
+
+.ad-notfound p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* ── Profile Card ────────────────────────────────────────── */
+.ad-profile-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.ad-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid #bfdbfe;
+}
+
+.ad-profile-main {
+  flex-grow: 1;
+}
+
+.ad-profile-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.ad-profile-spec {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.ad-availability {
+  font-size: 13px;
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.ad-rating-pill {
+  background: #fefce8;
+  color: #ca8a04;
+  border: 1px solid #fef08a;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: fit-content;
+}
+
+.ad-bio {
+  font-size: 14px;
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* ── Stats Row ───────────────────────────────────────────── */
+.ad-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.ad-stat {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ad-stat-icon {
+  font-size: 20px;
+}
+
+.ad-stat-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.ad-stat-label {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ── Contact & Languages ─────────────────────────────────── */
+.ad-contact-row {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+.ad-languages {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ad-lang-chip {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ── Connection Requests Section ─────────────────────────── */
+.ad-requests-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ad-requests-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.ad-filter-tabs {
+  display: flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 8px;
+  gap: 4px;
+}
+
+.ad-filter-tab {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ad-filter-tab.active {
+  background: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.ad-empty {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+  padding: 40px 0;
+}
+
+.ad-requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Request Card ────────────────────────────────────────── */
+.ad-request-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.2s ease;
+}
+
+.ad-request-card:hover {
+  border-color: #cbd5e1;
+}
+
+.ad-request-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.ad-request-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ad-request-info {
+  flex-grow: 1;
+}
+
+.ad-request-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.ad-request-meta {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.ad-status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.ad-request-msg {
+  font-size: 13px;
+  color: #334155;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.ad-request-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.ad-btn-accept {
+  background: #dcfce7;
+  color: #14532d;
+  border: 1px solid #bbf7d0;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.ad-btn-accept:hover {
+  background: #bbf7d0;
+}
+
+.ad-btn-decline {
+  background: #fee2e2;
+  color: #7f1d1d;
+  border: 1px solid #fecaca;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.ad-btn-decline:hover {
+  background: #fecaca;
+}
+
+.ad-btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ad-btn-primary:hover {
+  background: #1d4ed8;
+}
+
+/* ── Responsive adjustments (Dashboard) ─────────────────── */
+@media (max-width: 768px) {
+  .ad-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ad-topbar {
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ad-stats-row {
+    grid-template-columns: 1fr;
+  }
+  .ad-requests-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ad-filter-tabs {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+
+/* ============================================================
+   Advocate Profile Actions & Enhanced Modals Stylesheet
+   ============================================================ */
+
+/* ── Action Buttons Row ──────────────────────────────────── */
+.lw-profile-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.lw-btn-book {
+  flex: 1;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lw-btn-book:hover {
+  background: #1d4ed8;
+}
+
+.lw-btn-book:active {
+  transform: scale(0.98);
+}
+
+.lw-btn-back {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.lw-btn-back:hover {
+  background: #e2e8f0;
+}
+
+/* ── Modal Overlay Foundation ────────────────────────────── */
+.lw-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: lw-fade-in 0.2s ease forwards;
+}
+
+.lw-modal-card {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: lw-scale-up 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  border: 1px solid #e2e8f0;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes lw-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lw-scale-up {
+  from {
+    opacity: 0;
+    transform: scale(0.93) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ── Modal Form Controls & Typography ────────────────────── */
+.lw-modal-card h2,
+.lw-modal-card h3 {
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.lw-modal-card p,
+.lw-modal-subtitle {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.lw-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lw-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lw-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.lw-form-group input,
+.lw-form-group textarea,
+.lw-form-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.lw-form-group input:focus,
+.lw-form-group textarea:focus,
+.lw-form-group select:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.lw-form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.lw-modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.lw-modal-submit {
+  flex: 1;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.lw-modal-submit:hover {
+  background: #1d4ed8;
+}
+
+.lw-modal-cancel {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.lw-modal-cancel:hover {
+  background: #e2e8f0;
+}
+
+/* ── Responsive adjustments (Modals / Actions) ───────────── */
+@media (max-width: 480px) {
+  .lw-profile-actions {
+    flex-direction: column;
+  }
+  .lw-modal-card {
+    padding: 24px 20px;
+  }
+}
+
+/* ============================================================
+   Law4u Booking Consultation Modal Stylesheet
+   ============================================================ */
+
+/* ── Overlay & Backdrop ──────────────────────────────────── */
+.lw-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: lw-fade-in 0.2s ease forwards;
+}
+
+/* ── Modal Card Container ────────────────────────────────── */
+.lw-modal {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: lw-scale-up 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  border: 1px solid #e2e8f0;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes lw-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lw-scale-up {
+  from {
+    opacity: 0;
+    transform: scale(0.93) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.lw-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.lw-modal-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.lw-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.lw-modal-close:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* ── Subtitle text ───────────────────────────────────────── */
+.lw-modal-sub {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.lw-modal-sub strong {
+  color: #1e293b;
+}
+
+/* ── Form Fields Layout ──────────────────────────────────── */
+.lw-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.lw-modal-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.lw-modal-field input,
+.lw-modal-field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.lw-modal-field input:focus,
+.lw-modal-field textarea:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.lw-modal-field input:disabled,
+.lw-modal-field textarea:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.lw-modal-field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ── Error Text Styling ──────────────────────────────────── */
+.lw-modal-err {
+  font-size: 12px;
+  color: #dc2626;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* ── Modal Action Buttons Row ────────────────────────────── */
+.lw-modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.lw-modal-actions .lw-btn-back {
+  flex: 1;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-align: center;
+}
+
+.lw-modal-actions .lw-btn-back:hover:not(:disabled) {
+  background: #e2e8f0;
+}
+
+.lw-modal-actions .lw-btn-book {
+  flex: 1;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+  transition: background 0.2s ease, transform 0.1s ease;
+  text-align: center;
+}
+
+.lw-modal-actions .lw-btn-book:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.lw-modal-actions button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── Responsive Mobile Adjustment ────────────────────────── */
+@media (max-width: 480px) {
+  .lw-modal {
+    padding: 24px 20px;
+  }
+  .lw-modal-actions {
+    flex-direction: column-reverse;
+  }
+}
