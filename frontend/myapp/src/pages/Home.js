@@ -267,8 +267,15 @@ export default function Home() {
           <div className="lw-detail-modal" onClick={(e) => e.stopPropagation()}>
             <button className="lw-detail-close" type="button" onClick={() => setSelectedAdvocate(null)}>×</button>
             <div className="lw-detail-header">
-              <div className="lw-detail-avatar" style={{ background: getAvatarColor(selectedAdvocate.name) }}>
-                {getInitials(selectedAdvocate.name)}
+              <div
+                className="lw-detail-avatar"
+                style={{ background: selectedAdvocate.avatar ? 'transparent' : getAvatarColor(selectedAdvocate.name) }}
+              >
+                {selectedAdvocate.avatar ? (
+                  <img src={selectedAdvocate.avatar} alt={selectedAdvocate.name} className="lw-detail-avatar-img" />
+                ) : (
+                  getInitials(selectedAdvocate.name)
+                )}
               </div>
               <div>
                 <div className="lw-detail-name">{selectedAdvocate.name}</div>

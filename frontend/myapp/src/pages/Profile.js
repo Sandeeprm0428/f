@@ -72,15 +72,12 @@ function BookConsultationModal({ advocate, onClose, onSent }) {
       clientName: form.name.trim(),
       clientPhone: form.phone.trim(),
       clientEmail: form.email.trim().toLowerCase(),
-      clientCity: '', // not collected here, kept for shape-compatibility with dashboard
+      clientCity: '',
       message: form.message.trim(),
       requestedAt: new Date().toISOString(),
       status: 'pending',
     };
 
-    // advocate.id here comes from advocatesStore, the same id source
-    // AdvocateDashboard.js uses — so the request always lands in the
-    // right advocate's bucket.
     const all = loadAllRequests();
     const existing = all[advocate.id] || [];
     all[advocate.id] = [request, ...existing];
@@ -189,11 +186,8 @@ export default function Profile() {
   const [showBookModal, setShowBookModal] = useState(false);
   const [showSentModal, setShowSentModal] = useState(false);
 
-  // Read through advocatesStore (not raw advocates.json) so the id
-  // used here always matches the id AdvocateDashboard.js looks up by.
   const advocatesData = getAdvocates();
 
-  // Find advocate by ID if present in the URL, otherwise default to the first entry
   const advocate = id
     ? advocatesData.find(a => String(a.id) === String(id)) || advocatesData[0]
     : advocatesData[0];
@@ -223,9 +217,17 @@ export default function Profile() {
             <div className="lw-profile-header-content">
               <div
                 className="lw-profile-avatar"
-                style={{ background: getAvatarColor(advocate.name) }}
+                style={{ background: advocate.avatar ? 'transparent' : getAvatarColor(advocate.name) }}
               >
-                {getInitials(advocate.name)}
+                {advocate.avatar ? (
+                  <img 
+                    src={advocate.avatar} 
+                    alt={advocate.name} 
+                    className="lw-profile-avatar-img" 
+                  />
+                ) : (
+                  getInitials(advocate.name)
+                )}
               </div>
               <div>
                 <h1 className="lw-profile-name">{advocate.name}</h1>
@@ -275,7 +277,6 @@ export default function Profile() {
                 ))}
               </div>
             </div>
-
 
             {/* Action Buttons */}
             <div className="lw-profile-actions">

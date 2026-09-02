@@ -14,7 +14,8 @@
     "password": "Che@0428",
     "languages": ["English", "Hindi", "Marathi"],
     "availability": "Available today",
-    "bio": "Handles bail, FIR disputes, and criminal appeals with a strong courtroom record and practical guidance for clients."
+    "bio": "Handles bail, FIR disputes, and criminal appeals with a strong courtroom record and practical guidance for clients.",
+    "avatar": "/images/chetan.png"
   },
   {
     "id": 2,
@@ -31,7 +32,9 @@
     "password": "Vid@0428",
     "languages": ["English", "Kannada", "Hindi"],
     "availability": "Available this week",
-    "bio": "Advises on divorce, custody, maintenance, and family mediation with a calm and client-focused approach."
+    "bio": "Advises on divorce, custody, maintenance, and family mediation with a calm and client-focused approach.",
+    "avatar": "/images/chetan.png"
+
   },
   {
     "id": 3,
@@ -150,7 +153,8 @@
     "password": "Sand33p!9823_Rao",
     "languages": ["English", "Kannada", "Hindi"],
     "availability": "Available tomorrow",
-    "bio": "Advises on cyber fraud, digital harassment, data privacy, and online defamation legal remedies."
+    "bio": "Advises on cyber fraud, digital harassment, data privacy, and online defamation legal remedies.",
+    "avatar": "/images/sandeep.jpeg"
   },
   {
     "id": 10,

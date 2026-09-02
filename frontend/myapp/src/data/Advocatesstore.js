@@ -44,8 +44,28 @@ function normalizeSeedEntry(a, id) {
   return {
     ...a,
     id,
+    avatar: a.avatar || "",
     languages: a.languages || [],
     status: a.status || "approved",
+  };
+}
+
+function reconcileSeedData(existingAdvocate) {
+  const seed = seedAdvocates.find(
+    (item) => String(item.email).toLowerCase() === String(existingAdvocate.email || "").toLowerCase()
+  );
+
+  if (!seed) return existingAdvocate;
+
+  return {
+    ...existingAdvocate,
+    ...seed,
+    id: existingAdvocate.id,
+    avatar: existingAdvocate.avatar || seed.avatar || "",
+    languages: existingAdvocate.languages && existingAdvocate.languages.length
+      ? existingAdvocate.languages
+      : seed.languages || [],
+    status: existingAdvocate.status || seed.status || "approved",
   };
 }
 
@@ -60,18 +80,37 @@ function seedStore() {
 // Every subsequent load: add any advocates.json entries (by email)
 // that aren't already in the store, without touching existing data.
 function mergeNewSeedEntries(existing) {
-  const existingEmails = new Set(existing.map((a) => a.email.toLowerCase()));
+  const existingByEmail = new Map();
+
+  let changed = false;
+  const merged = existing.map((a) => {
+    const updated = reconcileSeedData(a);
+    const key = String(updated.email || "").toLowerCase();
+    existingByEmail.set(key, updated);
+
+    if (JSON.stringify(a) !== JSON.stringify(updated)) {
+      changed = true;
+    }
+
+    return updated;
+  });
+
   const missing = seedAdvocates.filter(
-    (a) => !existingEmails.has(a.email.toLowerCase())
+    (a) => !existingByEmail.has(String(a.email).toLowerCase())
   );
 
-  if (missing.length === 0) return existing;
+  if (missing.length > 0) {
+    let nextId = merged.length ? Math.max(...merged.map((a) => a.id)) + 1 : 1;
+    const additions = missing.map((a) => normalizeSeedEntry(a, nextId++));
+    const finalMerged = [...merged, ...additions];
+    persist(finalMerged);
+    return finalMerged;
+  }
 
-  let nextId = existing.length ? Math.max(...existing.map((a) => a.id)) + 1 : 1;
-  const additions = missing.map((a) => normalizeSeedEntry(a, nextId++));
+  if (changed) {
+    persist(merged);
+  }
 
-  const merged = [...existing, ...additions];
-  persist(merged);
   return merged;
 }
 

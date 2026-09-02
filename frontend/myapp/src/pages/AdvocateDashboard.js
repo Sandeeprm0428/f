@@ -190,8 +190,12 @@ export default function AdvocateDashboard() {
         {/* ── Profile card ── */}
         <div className="ad-card ad-profile-card">
           <div className="ad-profile-top">
-            <div className="ad-avatar">
-              {advocate.name.replace("Adv. ", "").split(" ").map(n => n[0]).join("")}
+            <div className="ad-avatar" style={{ background: advocate.avatar ? "transparent" : "#eff6ff" }}>
+              {advocate.avatar ? (
+                <img src={advocate.avatar} alt={advocate.name} className="ad-avatar-img" />
+              ) : (
+                advocate.name.replace("Adv. ", "").split(" ").map(n => n[0]).join("")
+              )}
             </div>
             <div className="ad-profile-main">
               <h1 className="ad-profile-name">{advocate.name}</h1>

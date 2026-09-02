@@ -113,6 +113,15 @@
   justify-content: center;
   flex-shrink: 0;
   border: 2px solid #bfdbfe;
+  overflow: hidden;
+}
+
+.ad-avatar-img {
+  width: 200%;
+  height: 200%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
 }
 
 .ad-profile-main {

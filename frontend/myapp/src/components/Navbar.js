@@ -54,7 +54,7 @@ function LawyerMegaMenu({ onClose }) {
         ))}
       </div>
       <div className="lw-mega-footer">
-        <Link to="/find-lawyer" className="lw-mega-all" onClick={onClose}>
+        <Link to="/AdvocatesList" className="lw-mega-all" onClick={onClose}>
           View All Lawyers →
         </Link>
         <button className="lw-mega-talk" onClick={() => { onClose(); navigate("/talk-to-advocate"); }}>

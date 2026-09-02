@@ -133,9 +133,13 @@ export default function AdvocatesList() {
                   <div className="lw-adv-top">
                     <div
                       className="lw-adv-avatar"
-                      style={{ background: getAvatarColor(adv.name) }}
+                      style={{ background: adv.avatar ? 'transparent' : getAvatarColor(adv.name) }}
                     >
-                      {getInitials(adv.name)}
+                      {adv.avatar ? (
+                        <img src={adv.avatar} alt={adv.name} className="lw-adv-avatar-img" />
+                      ) : (
+                        getInitials(adv.name)
+                      )}
                     </div>
                     <div className="lw-adv-info">
                       <div className="lw-adv-name">{adv.name}</div>
