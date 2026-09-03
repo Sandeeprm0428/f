@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { getAdvocates } from '../data/Advocatesstore';
 import './Profile.css';
 
@@ -24,6 +24,43 @@ const getAvatarColor = (name = '') => {
 
 const isValidEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 const isValidPhone = (p) => /^\d{10}$/.test(p.replace(/\s|-/g, ''));
+
+function ProfileAvatar({ advocate }) {
+  const [imagePath, setImagePath] = useState(advocate.avatar || '');
+  const [failed, setFailed] = useState(false);
+
+  const tryAlternateImage = () => {
+    if (!imagePath || !advocate.avatar) {
+      setFailed(true);
+      return;
+    }
+
+    const basePath = advocate.avatar.replace(/\.(png|jpe?g|webp)$/i, '');
+    const candidates = [`${basePath}.jpg`, `${basePath}.jpeg`, `${basePath}.png`, `${basePath}.webp`];
+    const nextPath = candidates.find((candidate) => candidate !== imagePath);
+    if (nextPath) {
+      setImagePath(nextPath);
+    } else {
+      setFailed(true);
+    }
+  };
+
+  return (
+    <div
+      className="lw-profile-avatar"
+      style={{ background: !failed && imagePath ? 'transparent' : getAvatarColor(advocate.name) }}
+    >
+      {!failed && imagePath ? (
+        <img
+          src={imagePath}
+          alt={advocate.name}
+          className="lw-profile-avatar-img"
+          onError={tryAlternateImage}
+        />
+      ) : getInitials(advocate.name)}
+    </div>
+  );
+}
 
 function loadAllRequests() {
   try {
@@ -183,14 +220,18 @@ function RequestSentModal({ advocate, onClose }) {
 export default function Profile() {
   const navigate = useNavigate();
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
   const [showBookModal, setShowBookModal] = useState(false);
   const [showSentModal, setShowSentModal] = useState(false);
 
   const advocatesData = getAdvocates();
 
-  const advocate = id
-    ? advocatesData.find(a => String(a.id) === String(id)) || advocatesData[0]
-    : advocatesData[0];
+  const email = searchParams.get('email');
+  const advocate = email
+    ? advocatesData.find(a => String(a.email).toLowerCase() === email.toLowerCase())
+    : id
+      ? advocatesData.find(a => String(a.id) === String(id)) || advocatesData[0]
+      : advocatesData[0];
 
   if (!advocate) {
     return (
@@ -215,20 +256,7 @@ export default function Profile() {
           {/* Header Banner */}
           <div className="lw-profile-header">
             <div className="lw-profile-header-content">
-              <div
-                className="lw-profile-avatar"
-                style={{ background: advocate.avatar ? 'transparent' : getAvatarColor(advocate.name) }}
-              >
-                {advocate.avatar ? (
-                  <img 
-                    src={advocate.avatar} 
-                    alt={advocate.name} 
-                    className="lw-profile-avatar-img" 
-                  />
-                ) : (
-                  getInitials(advocate.name)
-                )}
-              </div>
+              <ProfileAvatar advocate={advocate} />
               <div>
                 <h1 className="lw-profile-name">{advocate.name}</h1>
                 <div className="lw-profile-spec">{advocate.speciality}</div>

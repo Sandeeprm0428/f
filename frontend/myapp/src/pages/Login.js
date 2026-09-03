@@ -171,6 +171,7 @@ export default function Login() {
         </div>
 
         <div className="lg-badge">⚖️ For Advocates Only</div>
+        <Link to="/" className="lg-home-btn">Go to Home</Link>
 
         <form className="lg-form" onSubmit={handleSubmit} noValidate>
 

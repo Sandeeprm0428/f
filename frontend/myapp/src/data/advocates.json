@@ -12,7 +12,11 @@
     "phone": "+91 98765 43210",
     "email": "chetan.chandaragi@advocateshub.in",
     "password": "Che@0428",
-    "languages": ["English", "Hindi", "Marathi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Marathi"
+    ],
     "availability": "Available today",
     "bio": "Handles bail, FIR disputes, and criminal appeals with a strong courtroom record and practical guidance for clients.",
     "avatar": "/images/chetan.png"
@@ -30,11 +34,14 @@
     "phone": "+91 98765 43211",
     "email": "vidvath.chandaragi@advocateshub.in",
     "password": "Vid@0428",
-    "languages": ["English", "Kannada", "Hindi"],
+    "languages": [
+      "English",
+      "Kannada",
+      "Hindi"
+    ],
     "availability": "Available this week",
     "bio": "Advises on divorce, custody, maintenance, and family mediation with a calm and client-focused approach.",
     "avatar": "/images/chetan.png"
-
   },
   {
     "id": 3,
@@ -49,9 +56,13 @@
     "phone": "+91 98765 43212",
     "email": "basavaraj.kotagi@advocateshub.in",
     "password": "Bas@0428",
-    "languages": ["English", "Hindi"],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
     "availability": "Available tomorrow",
-    "bio": "Represents clients in land disputes, title verification, boundary conflicts, and property documentation matters."
+    "bio": "Represents clients in land disputes, title verification, boundary conflicts, and property documentation matters.",
+    "avatar": "/images/chetan.png"
   },
   {
     "id": 4,
@@ -66,9 +77,13 @@
     "phone": "+91 98765 43213",
     "email": "sneha.nair@advocateshub.in",
     "password": "Sn3h@_8291_Nai",
-    "languages": ["English", "Tamil"],
+    "languages": [
+      "English",
+      "Tamil"
+    ],
     "availability": "Available today",
-    "bio": "Works with startups and growing businesses on compliance, company registrations, contracts, and governance advice."
+    "bio": "Works with startups and growing businesses on compliance, company registrations, contracts, and governance advice.",
+    "avatar": "/images/chetan.png"
   },
   {
     "id": 5,
@@ -83,9 +98,14 @@
     "phone": "+91 98765 43214",
     "email": "rohit.gupta@advocateshub.in",
     "password": "Roh!t$4092_Gup",
-    "languages": ["English", "Hindi", "Telugu"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Telugu"
+    ],
     "availability": "Available this week",
-    "bio": "Specializes in civil suits, contract disputes, debt recovery, and litigation strategy for individuals and businesses."
+    "bio": "Specializes in civil suits, contract disputes, debt recovery, and litigation strategy for individuals and businesses.",
+    "avatar": "/images/chetan.png"
   },
   {
     "id": 6,
@@ -100,9 +120,14 @@
     "phone": "+91 98765 43215",
     "email": "ananya.singh@advocateshub.in",
     "password": "An@nya#5610_Sin",
-    "languages": ["English", "Hindi", "Marathi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Marathi"
+    ],
     "availability": "Available tomorrow",
-    "bio": "Provides tax planning, GST advisory, and representation in tax disputes across individual and business matters."
+    "bio": "Provides tax planning, GST advisory, and representation in tax disputes across individual and business matters.",
+    "avatar": "/images/chetan.png"
   },
   {
     "id": 7,
@@ -117,9 +142,14 @@
     "phone": "+91 98765 43216",
     "email": "karan.joshi@advocateshub.in",
     "password": "Kar@n$7312_Jos",
-    "languages": ["English", "Hindi", "Gujarati"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Gujarati"
+    ],
     "availability": "Available today",
-    "bio": "Assists businesses with GST registration, notices, recoveries, and litigation support in indirect tax matters."
+    "bio": "Assists businesses with GST registration, notices, recoveries, and litigation support in indirect tax matters.",
+    "avatar": "/images/chetan.png"
   },
   {
     "id": 8,
@@ -134,9 +164,14 @@
     "phone": "+91 98765 43217",
     "email": "meera.iyer@advocateshub.in",
     "password": "Me3r@#2045_Iye",
-    "languages": ["English", "Malayalam", "Hindi"],
+    "languages": [
+      "English",
+      "Malayalam",
+      "Hindi"
+    ],
     "availability": "Available this week",
-    "bio": "Handles consumer complaints, defective goods issues, unfair trade practices, and compensation claims."
+    "bio": "Handles consumer complaints, defective goods issues, unfair trade practices, and compensation claims.",
+    "avatar": "/images/chetan.png"
   },
   {
     "id": 9,
@@ -151,7 +186,11 @@
     "phone": "+91 98765 43218",
     "email": "sandeep.rao@advocateshub.in",
     "password": "Sand33p!9823_Rao",
-    "languages": ["English", "Kannada", "Hindi"],
+    "languages": [
+      "English",
+      "Kannada",
+      "Hindi"
+    ],
     "availability": "Available tomorrow",
     "bio": "Advises on cyber fraud, digital harassment, data privacy, and online defamation legal remedies.",
     "avatar": "/images/sandeep.jpeg"
@@ -169,9 +208,14 @@
     "phone": "+91 98765 43219",
     "email": "nisha.kapoor@advocateshub.in",
     "password": "Nish@$6541_Kap",
-    "languages": ["English", "Hindi", "Punjabi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Punjabi"
+    ],
     "availability": "Available today",
-    "bio": "Guides clients through visas, work permits, overseas documentation, and compliance for migration matters."
+    "bio": "Guides clients through visas, work permits, overseas documentation, and compliance for migration matters.",
+    "avatar": "/images/nisha.jpeg"
   },
   {
     "id": 11,
@@ -186,9 +230,14 @@
     "phone": "+91 98765 43220",
     "email": "arjun.patel@advocateshub.in",
     "password": "ArjUn#1190_Pat",
-    "languages": ["English", "Hindi", "Gujarati"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Gujarati"
+    ],
     "availability": "Available this week",
-    "bio": "Handles loan disputes, recovery issues, mortgage claims, and banking documentation across finance matters."
+    "bio": "Handles loan disputes, recovery issues, mortgage claims, and banking documentation across finance matters.",
+    "avatar": "/images/arjun.jpeg"
   },
   {
     "id": 12,
@@ -203,9 +252,14 @@
     "phone": "+91 98765 43221",
     "email": "neha.verma@advocateshub.in",
     "password": "N3ha!4782_Ver",
-    "languages": ["English", "Hindi", "Urdu"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Urdu"
+    ],
     "availability": "Available tomorrow",
-    "bio": "Supports families in divorce, maintenance, domestic issues, and sensitive mediation with empathetic legal advice."
+    "bio": "Supports families in divorce, maintenance, domestic issues, and sensitive mediation with empathetic legal advice.",
+    "avatar": "/images/neha.jpeg"
   },
   {
     "id": 13,
@@ -220,9 +274,14 @@
     "phone": "+91 98765 43222",
     "email": "vikram.singh@advocateshub.in",
     "password": "Vikr@m$3321_Sin",
-    "languages": ["English", "Hindi", "Rajasthani"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Rajasthani"
+    ],
     "availability": "Available today",
-    "bio": "Advises employers and employees on labor disputes, termination matters, compliance, and workplace claims."
+    "bio": "Advises employers and employees on labor disputes, termination matters, compliance, and workplace claims.",
+    "avatar": "/images/vikram.jpeg"
   },
   {
     "id": 14,
@@ -237,9 +296,14 @@
     "phone": "+91 98765 43223",
     "email": "simran.malhotra@advocateshub.in",
     "password": "Simr@n#8834_Mal",
-    "languages": ["English", "Hindi", "Punjabi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Punjabi"
+    ],
     "availability": "Available this week",
-    "bio": "Represents clients in cheque bounce cases, notices, debt recovery, and negotiation for financial disputes."
+    "bio": "Represents clients in cheque bounce cases, notices, debt recovery, and negotiation for financial disputes.",
+    "avatar": "/images/simran.jpeg"
   },
   {
     "id": 15,
@@ -254,7 +318,10 @@
     "phone": "+91 98765 43224",
     "email": "dev.nair@advocateshub.in",
     "password": "D3v!5092_Nai",
-    "languages": ["English", "Malayalam"],
+    "languages": [
+      "English",
+      "Malayalam"
+    ],
     "availability": "Available tomorrow",
     "bio": "Advises on land title disputes, property transfers, builder disputes, and real estate documentation."
   },
@@ -271,7 +338,11 @@
     "phone": "+91 98765 43225",
     "email": "harshad.shah@advocateshub.in",
     "password": "Harsh@d$6612_Sha",
-    "languages": ["English", "Hindi", "Marathi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Marathi"
+    ],
     "availability": "Available this week",
     "bio": "Supports companies with contracts, corporate governance, compliance audits, and director dispute advisory."
   },
@@ -288,7 +359,11 @@
     "phone": "+91 98765 43226",
     "email": "ishita.roy@advocateshub.in",
     "password": "Ish!t@#1402_Roy",
-    "languages": ["English", "Hindi", "Bengali"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Bengali"
+    ],
     "availability": "Available today",
     "bio": "Handles civil suits, injunctions, contract enforcement, and recovery disputes for individuals and companies."
   },
@@ -305,7 +380,10 @@
     "phone": "+91 98765 43227",
     "email": "yash.khanna@advocateshub.in",
     "password": "Y@sh$9921_Kha",
-    "languages": ["English", "Hindi"],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
     "availability": "Available tomorrow",
     "bio": "Advises on banking fraud, EMI defaults, service charge disputes, and recovery litigation support."
   },
@@ -322,7 +400,11 @@
     "phone": "+91 98765 43228",
     "email": "pooja.reddy@advocateshub.in",
     "password": "Pooja#7743_Red",
-    "languages": ["English", "Telugu", "Hindi"],
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
     "availability": "Available this week",
     "bio": "Focuses on consumer complaints, refund claims, product defects, and unfair trade practices."
   },
@@ -339,7 +421,10 @@
     "phone": "+91 98765 43229",
     "email": "ritu.sethi@advocateshub.in",
     "password": "Ritu!3309_Set",
-    "languages": ["English", "Hindi"],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
     "availability": "Available today",
     "bio": "Represents clients in income tax, GST notices, assessments, and appeals before tax authorities."
   },
@@ -356,7 +441,11 @@
     "phone": "+91 98765 43230",
     "email": "aditya.bose@advocateshub.in",
     "password": "Adity@$2291_Bos",
-    "languages": ["English", "Hindi", "Bengali"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Bengali"
+    ],
     "availability": "Available tomorrow",
     "bio": "Handles land disputes, builder-buyer conflicts, tenancy matters, and sale deed review for property owners."
   },
@@ -373,7 +462,11 @@
     "phone": "+91 98765 43231",
     "email": "kavya.menon@advocateshub.in",
     "password": "Kavy@#5582_Men",
-    "languages": ["English", "Tamil", "Hindi"],
+    "languages": [
+      "English",
+      "Tamil",
+      "Hindi"
+    ],
     "availability": "Available this week",
     "bio": "Supports clients in custody, domestic violence, maintenance, and family mediation among sensitive disputes."
   },
@@ -390,7 +483,10 @@
     "phone": "+91 98765 43232",
     "email": "mohan.bansal@advocateshub.in",
     "password": "Moh@n!4810_Ban",
-    "languages": ["English", "Hindi"],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
     "availability": "Available tomorrow",
     "bio": "Represents clients in bail, criminal complaints, and serious charge matters across trial and appeal stages."
   },
@@ -407,7 +503,11 @@
     "phone": "+91 98765 43233",
     "email": "aarti.naik@advocateshub.in",
     "password": "Aarti$1290_Nai",
-    "languages": ["English", "Marathi", "Hindi"],
+    "languages": [
+      "English",
+      "Marathi",
+      "Hindi"
+    ],
     "availability": "Available today",
     "bio": "Helps clients through divorce proceedings, alimony claims, and family settlements with practical solutions."
   },
@@ -424,7 +524,11 @@
     "phone": "+91 98765 43234",
     "email": "tushar.jain@advocateshub.in",
     "password": "Tush@r#3094_Jai",
-    "languages": ["English", "Hindi", "Gujarati"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Gujarati"
+    ],
     "availability": "Available tomorrow",
     "bio": "Drafts and negotiates commercial agreements and advises businesses on partner, vendor, and compliance issues."
   },
@@ -441,7 +545,11 @@
     "phone": "+91 98765 43235",
     "email": "aisha.khan@advocateshub.in",
     "password": "Aish@!9023_Kha",
-    "languages": ["English", "Hindi", "Urdu"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Urdu"
+    ],
     "availability": "Available this week",
     "bio": "Assists victims of online fraud, hacking, social media abuse, and cyber blackmail with legal redress."
   },
@@ -458,7 +566,11 @@
     "phone": "+91 98765 43236",
     "email": "saurabh.mishra@advocateshub.in",
     "password": "Saur@bh$5511_Mis",
-    "languages": ["English", "Hindi", "Marathi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Marathi"
+    ],
     "availability": "Available today",
     "bio": "Advises on employee grievances, termination, workplace disputes, and compliance under labour laws."
   },
@@ -475,7 +587,11 @@
     "phone": "+91 98765 43237",
     "email": "isha.kulkarni@advocateshub.in",
     "password": "Ish@#4489_Kul",
-    "languages": ["English", "Kannada", "Hindi"],
+    "languages": [
+      "English",
+      "Kannada",
+      "Hindi"
+    ],
     "availability": "Available this week",
     "bio": "Helps creators and businesses protect trademarks, copyrights, patents, and brand assets."
   },
@@ -492,7 +608,11 @@
     "phone": "+91 98765 43238",
     "email": "rajeev.raman@advocateshub.in",
     "password": "Raj33v!7832_Ram",
-    "languages": ["English", "Tamil", "Hindi"],
+    "languages": [
+      "English",
+      "Tamil",
+      "Hindi"
+    ],
     "availability": "Available tomorrow",
     "bio": "Handles cheque bounce notices, recovery matters, and financial litigation with prompt action plans."
   },
@@ -509,7 +629,10 @@
     "phone": "+91 98765 43239",
     "email": "deeksha.iyer@advocateshub.in",
     "password": "Deeksh@$3301_Iye",
-    "languages": ["English", "Malayalam"],
+    "languages": [
+      "English",
+      "Malayalam"
+    ],
     "availability": "Available today",
     "bio": "Supports matrimonial issues, guardianship cases, and family disputes with practical legal advice."
   },
@@ -526,9 +649,14 @@
     "phone": "+91 98765 43240",
     "email": "kunal.shah@advocateshub.in",
     "password": "Kun@l#9982_Sha",
-    "languages": ["English", "Hindi", "Gujarati"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Gujarati"
+    ],
     "availability": "Available tomorrow",
-    "bio": "Advises on GST registrations, assessment orders, and litigation strategy for refund and compliance matters."
+    "bio": "Advises on GST registrations, assessment orders, and litigation strategy for refund and compliance matters.",
+    "avatar": "/images/chetan.png"
   },
   {
     "id": 32,
@@ -543,7 +671,11 @@
     "phone": "+91 98765 43241",
     "email": "pankaj.dutta@advocateshub.in",
     "password": "Pank@j!6210_Dut",
-    "languages": ["English", "Hindi", "Bengali"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Bengali"
+    ],
     "availability": "Available this week",
     "bio": "Drafts and enforces trademark and copyright protections for businesses, creators, and startup founders."
   },
@@ -560,7 +692,11 @@
     "phone": "+91 98765 43242",
     "email": "bhavna.oberoi@advocateshub.in",
     "password": "Bhavn@$1198_Obe",
-    "languages": ["English", "Hindi", "Punjabi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Punjabi"
+    ],
     "availability": "Available today",
     "bio": "Advises clients in custody battles, family property matters, and mediation-focused family settlements."
   },
@@ -577,7 +713,11 @@
     "phone": "+91 98765 43243",
     "email": "sanjay.grover@advocateshub.in",
     "password": "Sanj@y#4472_Gro",
-    "languages": ["English", "Hindi", "Kannada"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Kannada"
+    ],
     "availability": "Available tomorrow",
     "bio": "Handles title scrutiny, sale deed drafting, and land dispute strategy for property buyers and developers."
   },
@@ -594,7 +734,10 @@
     "phone": "+91 98765 43244",
     "email": "nikhil.chawla@advocateshub.in",
     "password": "Nikh!l!8831_Cha",
-    "languages": ["English", "Hindi"],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
     "availability": "Available today",
     "bio": "Represents consumers in defective products, service complaints, and unfair trade practice disputes."
   },
@@ -611,7 +754,11 @@
     "phone": "+91 98765 43245",
     "email": "reema.das@advocateshub.in",
     "password": "R3em@$2341_Das",
-    "languages": ["English", "Bengali", "Hindi"],
+    "languages": [
+      "English",
+      "Bengali",
+      "Hindi"
+    ],
     "availability": "Available this week",
     "bio": "Guides clients through divorce, maintenance, and matrimonial settlements with a supportive approach."
   },
@@ -628,7 +775,10 @@
     "phone": "+91 98765 43246",
     "email": "omkar.srivastava@advocateshub.in",
     "password": "Omk@r#7761_Sri",
-    "languages": ["English", "Hindi"],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
     "availability": "Available tomorrow",
     "bio": "Handles civil disputes including contracts, injunctions, rent litigation, and recovery proceedings."
   },
@@ -645,7 +795,11 @@
     "phone": "+91 98765 43247",
     "email": "shreya.nanda@advocateshub.in",
     "password": "Shrey@!5520_Nan",
-    "languages": ["English", "Hindi", "Kannada"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Kannada"
+    ],
     "availability": "Available this week",
     "bio": "Assists with visa filing, documentation, immigration paperwork, and compliance for overseas relocation."
   },
@@ -662,7 +816,11 @@
     "phone": "+91 98765 43248",
     "email": "tarun.rao@advocateshub.in",
     "password": "T@run$3912_Rao",
-    "languages": ["English", "Telugu", "Hindi"],
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
     "availability": "Available today",
     "bio": "Represents clients in bail hearings, criminal trials, anticipatory bail, and high-stakes litigation."
   },
@@ -679,7 +837,10 @@
     "phone": "+91 98765 43249",
     "email": "sheetal.arora@advocateshub.in",
     "password": "Sh3et@l#1098_Aro",
-    "languages": ["English", "Hindi"],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
     "availability": "Available tomorrow",
     "bio": "Advises businesses on GST compliance, tax notices, and procedural disputes in indirect tax matters."
   },
@@ -696,7 +857,11 @@
     "phone": "+91 98765 43250",
     "email": "rohan.malhotra@advocateshub.in",
     "password": "Roh@n!8822_Mal",
-    "languages": ["English", "Hindi", "Rajasthani"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Rajasthani"
+    ],
     "availability": "Available today",
     "bio": "Provides representation in tax assessments, appeals, notices, and planning for individuals and firms."
   },
@@ -713,7 +878,11 @@
     "phone": "+91 98765 43251",
     "email": "mitali.sen@advocateshub.in",
     "password": "Mit@li$4419_Sen",
-    "languages": ["English", "Hindi", "Marathi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Marathi"
+    ],
     "availability": "Available this week",
     "bio": "Supports founders and startups with formation, compliance, funding documents, and business agreement drafting."
   },
@@ -730,7 +899,11 @@
     "phone": "+91 98765 43252",
     "email": "vaibhav.sharma@advocateshub.in",
     "password": "Vaibh@v#6712_Sha",
-    "languages": ["English", "Hindi", "Marathi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Marathi"
+    ],
     "availability": "Available tomorrow",
     "bio": "Advises on secured loans, recovery, NPA issues, and financial disputes involving private and public banks."
   },
@@ -747,7 +920,10 @@
     "phone": "+91 98765 43253",
     "email": "kriti.mallick@advocateshub.in",
     "password": "Krit@!2204_Mal",
-    "languages": ["English", "Hindi"],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
     "availability": "Available this week",
     "bio": "Handles tenant disputes, property disputes, encroachment cases, and title-related representation."
   },
@@ -764,7 +940,11 @@
     "phone": "+91 98765 43254",
     "email": "abhishek.rawat@advocateshub.in",
     "password": "Abh!sh3k$9012_Raw",
-    "languages": ["English", "Hindi", "Punjabi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Punjabi"
+    ],
     "availability": "Available today",
     "bio": "Manages criminal appeals, anticipatory bail, and defense strategy in complex litigation across trial courts."
   },
@@ -781,7 +961,11 @@
     "phone": "+91 98765 43255",
     "email": "gayatri.nair@advocateshub.in",
     "password": "Gayatr@#1190_Nai",
-    "languages": ["English", "Malayalam", "Hindi"],
+    "languages": [
+      "English",
+      "Malayalam",
+      "Hindi"
+    ],
     "availability": "Available tomorrow",
     "bio": "Advises employees and employers on wage disputes, terminations, workplace safety, and labour compliance."
   },
@@ -798,7 +982,11 @@
     "phone": "+91 98765 43256",
     "email": "prateek.desai@advocateshub.in",
     "password": "Pr@teek!5532_Des",
-    "languages": ["English", "Hindi", "Gujarati"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Gujarati"
+    ],
     "availability": "Available today",
     "bio": "Handles contract enforcement, recovery proceedings, and business dispute resolution for commercial clients."
   },
@@ -815,7 +1003,10 @@
     "phone": "+91 98765 43257",
     "email": "sanya.bhatia@advocateshub.in",
     "password": "Sany@$8831_Bha",
-    "languages": ["English", "Hindi"],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
     "availability": "Available this week",
     "bio": "Works on divorce issues, mediation, property settlement, and family arrangements with patience and clarity."
   },
@@ -832,7 +1023,11 @@
     "phone": "+91 98765 43258",
     "email": "zoya.khan@advocateshub.in",
     "password": "Zoy@#7712_Kha",
-    "languages": ["English", "Hindi", "Marathi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Marathi"
+    ],
     "availability": "Available tomorrow",
     "bio": "Represents clients in complaint filings, vehicle disputes, and consumer grievance resolutions across sectors."
   },
@@ -849,7 +1044,11 @@
     "phone": "+91 98765 43259",
     "email": "rishabh.tiwari@advocateshub.in",
     "password": "Rish@bh!3390_Tiw",
-    "languages": ["English", "Hindi", "Marathi"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Marathi"
+    ],
     "availability": "Available today",
     "bio": "Advises on debt recovery, loan grievances, mortgage matters, and negotiation with financial institutions."
   },
@@ -866,7 +1065,10 @@
     "phone": "+91 98765 43260",
     "email": "vinodkumar.rayar@advocateshub.in",
     "password": "Vinod@0428",
-    "languages": ["English", "Kannada"],
+    "languages": [
+      "English",
+      "Kannada"
+    ],
     "availability": "Available tomorrow",
     "bio": "Provides comprehensive civil and criminal litigation services in Gokak."
   },
@@ -883,7 +1085,11 @@
     "phone": "+91 98765 43261",
     "email": "gurappa.appanidoni@advocateshub.in",
     "password": "Gurappa@0428",
-    "languages": ["English", "Kannada", "Hindi"],
+    "languages": [
+      "English",
+      "Kannada",
+      "Hindi"
+    ],
     "availability": "Available today",
     "bio": "Based in Raviwar Peth, Gokak, specializing in taxation, company matters, and corporate compliance."
   },
@@ -894,13 +1100,19 @@
     "practiceArea": "Divorce & Family",
     "speciality": "Divorce, Family, Civil & Criminal",
     "experience": "40 years",
-    "rating": 5.0,
+    "rating": 5,
     "cases": 1250,
     "fee": "₹1,000 / consult",
     "phone": "+91 98765 43262",
     "email": "kishan.kalaskar@advocateshub.in",
     "password": "Kishan@0428",
-    "languages": ["English", "Hindi", "Kannada", "Telugu", "Urdu"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Kannada",
+      "Telugu",
+      "Urdu"
+    ],
     "availability": "Available today",
     "bio": "Highly experienced senior advocate in Bengaluru urban handling divorce, family matters, civil cases, cheque bounce, and criminal matters."
   },
@@ -917,7 +1129,14 @@
     "phone": "+91 98765 43263",
     "email": "sandesh.arvind@advocateshub.in",
     "password": "Sandesh@0428",
-    "languages": ["English", "Kannada", "Hindi", "Tulu", "Tamil", "Telugu"],
+    "languages": [
+      "English",
+      "Kannada",
+      "Hindi",
+      "Tulu",
+      "Tamil",
+      "Telugu"
+    ],
     "availability": "Available today",
     "bio": "Practicing in Jayanagara, Bengaluru, offering specialized consulting in cyber law, divorce, cheque bounce, and property conveyancing."
   },
@@ -934,7 +1153,11 @@
     "phone": "+91 98765 43264",
     "email": "sharanagouda.patil@advocateshub.in",
     "password": "Sharan@0428",
-    "languages": ["Kannada", "English", "Hindi"],
+    "languages": [
+      "Kannada",
+      "English",
+      "Hindi"
+    ],
     "availability": "Available this week",
     "bio": "Based in Vijayanagar, Bengaluru, expert in divorce, child custody, cheque bounce, property, labour matters, criminal matters, and NCLT."
   },
@@ -951,7 +1174,13 @@
     "phone": "+91 98765 43265",
     "email": "chandrasekharan.pillai@advocateshub.in",
     "password": "Chandra@0428",
-    "languages": ["English", "Hindi", "Malayalam", "Kannada", "Tamil"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Malayalam",
+      "Kannada",
+      "Tamil"
+    ],
     "availability": "Available today",
     "bio": "Handles consumer and family court cases with multi-lingual proficiency in Bangalore."
   },
@@ -968,7 +1197,11 @@
     "phone": "+91 98765 43266",
     "email": "nikhil.hegde@advocateshub.in",
     "password": "Nikhil@0428",
-    "languages": ["English", "Kannada", "Hindi"],
+    "languages": [
+      "English",
+      "Kannada",
+      "Hindi"
+    ],
     "availability": "Available today",
     "bio": "General legal consulting and representation across various civil and legal subjects in Bangalore."
   },
@@ -985,7 +1218,11 @@
     "phone": "+91 98765 43267",
     "email": "sanjana.jagadeesha@advocateshub.in",
     "password": "Sanjana@0428",
-    "languages": ["Kannada", "English", "Hindi"],
+    "languages": [
+      "Kannada",
+      "English",
+      "Hindi"
+    ],
     "availability": "Available today",
     "bio": "Expert in corporate and commercial law advisory, contracting, and business compliance in Bengaluru."
   },
@@ -1002,7 +1239,12 @@
     "phone": "+91 98765 43268",
     "email": "ramesh.babu@advocateshub.in",
     "password": "Ramesh@0428",
-    "languages": ["Kannada", "English", "Hindi", "Telugu"],
+    "languages": [
+      "Kannada",
+      "English",
+      "Hindi",
+      "Telugu"
+    ],
     "availability": "Available tomorrow",
     "bio": "Practicing in Malleswaram, Bangalore, with expertise in family matters, civil, criminal, banking, property consultancy, and legal opinions."
   },
@@ -1019,7 +1261,10 @@
     "phone": "+91 98765 43269",
     "email": "ashfak.boliyar@advocateshub.in",
     "password": "Ashfak@0428",
-    "languages": ["English", "Kannada"],
+    "languages": [
+      "English",
+      "Kannada"
+    ],
     "availability": "Available today",
     "bio": "Handling civil and criminal cases in Mangalore courts with a dedicated approach."
   },
@@ -1036,7 +1281,13 @@
     "phone": "9740673085",
     "email": "nagaraj.karbari@advocateshub.in",
     "password": "Nagaraj@0428",
-    "languages": ["English", "Kannada", "Hindi", "Marathi", "Telugu"],
+    "languages": [
+      "English",
+      "Kannada",
+      "Hindi",
+      "Marathi",
+      "Telugu"
+    ],
     "availability": "Available today",
     "bio": "Practicing in Bidar, Karnataka, specializing in civil, criminal, and matrimonial legal disputes."
   },
@@ -1053,7 +1304,10 @@
     "phone": "+91 98765 43271",
     "email": "ayesha.alzaabi@advocateshub.in",
     "password": "Ayesha@0428",
-    "languages": ["English", "Arabic"],
+    "languages": [
+      "English",
+      "Arabic"
+    ],
     "availability": "Available this week",
     "bio": "Providing legal consultations and advisory services for various legal matters in Bangalore."
   },
@@ -1070,7 +1324,12 @@
     "phone": "+91 98765 43272",
     "email": "sofiya@advocateshub.in",
     "password": "Sofiya@0428",
-    "languages": ["Kannada", "English", "Hindi", "Telugu"],
+    "languages": [
+      "Kannada",
+      "English",
+      "Hindi",
+      "Telugu"
+    ],
     "availability": "Available today",
     "bio": "Practicing in Bangalore, specializing in criminal law, NDPS cases, property matters, cyber law, and procedural law."
   },
@@ -1087,7 +1346,15 @@
     "phone": "+91 98765 43273",
     "email": "babita@advocateshub.in",
     "password": "Babita@0428",
-    "languages": ["English", "Hindi", "Kannada", "Bengali", "Maithili", "Urdu", "Oria"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Kannada",
+      "Bengali",
+      "Maithili",
+      "Urdu",
+      "Oria"
+    ],
     "availability": "Available today",
     "bio": "Based near Palace Road, High Ground, Bangalore, handling divorce, child custody, writs, bail, civil, consumer, NDPS, and cheque bounce matters."
   },
@@ -1104,7 +1371,11 @@
     "phone": "+91 98765 43274",
     "email": "vaishali.singh@advocateshub.in",
     "password": "Vaishali@0428",
-    "languages": ["English", "Hindi", "French"],
+    "languages": [
+      "English",
+      "Hindi",
+      "French"
+    ],
     "availability": "Available today",
     "bio": "Practicing in Kalkere Layout, Bangalore, offering dedicated legal consulting across general legal subjects."
   },
@@ -1121,7 +1392,13 @@
     "phone": "+91 98765 43275",
     "email": "varghese.salvan@advocateshub.in",
     "password": "Varghese@0428",
-    "languages": ["English", "Hindi", "Malayalam", "Kannada", "Tamil"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Malayalam",
+      "Kannada",
+      "Tamil"
+    ],
     "availability": "Available tomorrow",
     "bio": "Based in Chikkabellandur, Bangalore, handling criminal, civil, matrimonial, and NI Act cases."
   },
@@ -1138,7 +1415,12 @@
     "phone": "+91 98765 43276",
     "email": "paramshivan.j@advocateshub.in",
     "password": "Param@0428",
-    "languages": ["English", "Kannada", "Tamil", "Hindi"],
+    "languages": [
+      "English",
+      "Kannada",
+      "Tamil",
+      "Hindi"
+    ],
     "availability": "Available today",
     "bio": "Practicing in Jayanagar, Bangalore, specializing in property verification, documentation, deeds, contracts, and accident claims."
   },
@@ -1155,7 +1437,13 @@
     "phone": "+91 98765 43277",
     "email": "varsha.rs@advocateshub.in",
     "password": "Varsha@0428",
-    "languages": ["Kannada", "Hindi", "English", "Marathi", "Tamil"],
+    "languages": [
+      "Kannada",
+      "Hindi",
+      "English",
+      "Marathi",
+      "Tamil"
+    ],
     "availability": "Available today",
     "bio": "Operating from Pramod Layout & Koramangala, Bangalore, specializing in property legal due diligence, title verification, revenue records, khata, and registration."
   },
@@ -1172,7 +1460,13 @@
     "phone": "+91 98765 43278",
     "email": "harsha.gs@advocateshub.in",
     "password": "Harsha@0428",
-    "languages": ["Kannada", "English", "Hindi", "Tamil", "Telugu"],
+    "languages": [
+      "Kannada",
+      "English",
+      "Hindi",
+      "Tamil",
+      "Telugu"
+    ],
     "availability": "Available today",
     "bio": "Based in Bengaluru, handling civil, property, criminal, cheque bounce, NRI, consumer, divorce, corporate, tax, cyber, and bail matters."
   },
@@ -1189,7 +1483,11 @@
     "phone": "+91 98765 43279",
     "email": "pm.kalkori@advocateshub.in",
     "password": "Kalkori@0428",
-    "languages": ["Kannada", "English", "Marathi"],
+    "languages": [
+      "Kannada",
+      "English",
+      "Marathi"
+    ],
     "availability": "Available tomorrow",
     "bio": "Practicing in Gulbarga, specializing in civil litigation covering property, family, consumer, Wakf board, and revenue matters."
   },
@@ -1206,7 +1504,13 @@
     "phone": "+91 98765 43280",
     "email": "shweta.naik@advocateshub.in",
     "password": "Shweta@0428",
-    "languages": ["Kannada", "Hindi", "Marathi", "English", "Konkani"],
+    "languages": [
+      "Kannada",
+      "Hindi",
+      "Marathi",
+      "English",
+      "Konkani"
+    ],
     "availability": "Available today",
     "bio": "Practicing in Electronic City, Bangalore, handling family matters, counseling, DV matters, cheque bounce cases, and general civil and criminal matters."
   },
@@ -1223,7 +1527,11 @@
     "phone": "+91 98765 43281",
     "email": "rajesh.hanji@advocateshub.in",
     "password": "Rajesh@0428",
-    "languages": ["English", "Hindi", "Kannada"],
+    "languages": [
+      "English",
+      "Hindi",
+      "Kannada"
+    ],
     "availability": "Available today",
     "bio": "Handles civil and criminal matters in Gokak with diligent client representation and legal counseling."
   },
@@ -1240,7 +1548,10 @@
     "phone": "+91 98765 43282",
     "email": "dynaneshwar.malagi@advocateshub.in",
     "password": "Dynan@0428",
-    "languages": ["English", "Kannada"],
+    "languages": [
+      "English",
+      "Kannada"
+    ],
     "availability": "Available this week",
     "bio": "Focuses on property disputes, documentation, and real estate legal support in Gokak."
   },
@@ -1257,8 +1568,119 @@
     "phone": "+91 98765 43283",
     "email": "nanjundappa.jugali@advocateshub.in",
     "password": "Nanju@0428",
-    "languages": ["English", "Kannada"],
+    "languages": [
+      "English",
+      "Kannada"
+    ],
     "availability": "Available today",
     "bio": "Practicing in Somwarpeth, Gokak, specializing in criminology, human rights, and information technology legal matters."
+  },
+  {
+    "id": 75,
+    "name": "Sanju",
+    "city": "Bengaluru",
+    "practiceArea": "Divorce",
+    "speciality": "Divorce",
+    "experience": "1–3 years",
+    "rating": 0,
+    "cases": 0,
+    "fee": "2000",
+    "phone": "9876545678",
+    "email": "sanju@gmail.com",
+    "password": "San@0428",
+    "languages": [],
+    "availability": "Not available",
+    "bio": "hi this is me ",
+    "avatar": "/images/sanju.png"
+  },
+  {
+    "id": 76,
+    "name": "sandee",
+    "city": "Bengaluru",
+    "practiceArea": "Divorce",
+    "speciality": "Divorce",
+    "experience": "3–5 years",
+    "rating": 0,
+    "cases": 0,
+    "fee": "20000000",
+    "phone": "9108717353",
+    "email": "s@gmail.com",
+    "password": "Man@0428",
+    "languages": [],
+    "availability": "Not available",
+    "bio": "hb",
+    "avatar": "/images/sandee.png"
+  },
+  {
+    "id": 77,
+    "name": "man",
+    "city": "Bengaluru",
+    "practiceArea": "Intellectual Property",
+    "speciality": "Intellectual Property",
+    "experience": "3–5 years",
+    "rating": 0,
+    "cases": 0,
+    "fee": "20022",
+    "phone": "1234567898",
+    "email": "man@gmail.com",
+    "password": "San@0428",
+    "languages": [],
+    "availability": "Not available",
+    "bio": "indsc",
+    "avatar": "/images/man.png"
+  },
+  {
+    "id": 78,
+    "name": "Sanju",
+    "city": "Bengaluru",
+    "practiceArea": "Divorce",
+    "speciality": "Divorce",
+    "experience": "3–5 years",
+    "rating": 0,
+    "cases": 0,
+    "fee": "20000",
+    "phone": "9876545678",
+    "email": "san@gmail.com",
+    "password": "San@0428",
+    "languages": [],
+    "availability": "Not available",
+    "bio": "hii",
+    "avatar": "/images/chetan.png"
+  },
+  {
+    "id": 79,
+    "name": "Sankeerthana",
+    "city": "Bengaluru",
+    "practiceArea": "Criminal Law",
+    "speciality": "Criminal Law",
+    "experience": "3–5 years",
+    "rating": 0,
+    "cases": 0,
+    "fee": "8777",
+    "phone": "1234567898",
+    "email": "sank@gmail.com",
+    "password": "San@0428",
+    "languages": [],
+    "availability": "Not available",
+    "bio": "Hiii",
+    "avatar": "/images/sankeerthana.png"
+  },
+  {
+    "id": 80,
+    "name": "Adv. Basavaraj Kotagi",
+    "city": "Bengaluru",
+    "practiceArea": "Cyber Law",
+    "speciality": "Cyber Law",
+    "experience": "5–10 years",
+    "rating": 0,
+    "cases": 0,
+    "fee": "0428",
+    "phone": "9108173535",
+    "email": "basu@gmail.com",
+    "password": "San@0428",
+    "languages": [],
+    "availability": "Not available",
+    "bio": "wxs",
+    "avatar": "/images/basavaraj-kotagi.png"
   }
 ]

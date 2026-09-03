@@ -11,7 +11,7 @@ const LAWYER_CATEGORIES = [
 ];
 
 const LEGAL_ADVICE = [
-  { icon: "❓", label: "Ask a Question",    path: "/legal-advice" },
+  { icon: "❓", label: "Ask a Question",    path: "/legal-advice/ask-question" },
   { icon: "📋", label: "Legal Documents",    path: "/legal-advice/documents" },
   { icon: "🏛️", label: "Bare Acts",          path: "/legal-advice/bare-acts" },
   { icon: "📰", label: "Legal News",         path: "/legal-advice/news" },

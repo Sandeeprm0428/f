@@ -22,6 +22,7 @@ import {
   rejectAdvocate,
 } from "../data/Advocatesstore";
 import { getMessages, markAsRead, deleteMessage } from "../data/MessageStore";
+import { getQuestions, markQuestionAsRead, deleteQuestion } from "../data/QuestionStore";
 import "./AdminPage.css";
 
 const ADMIN_SESSION_KEY = "law4u_admin_session";
@@ -443,6 +444,48 @@ function MessageDetailModal({ msg, onClose }) {
   );
 }
 
+function QuestionRow({ question, onOpen, onDelete }) {
+  return (
+    <div className={`am-msg-row ${question.read ? "" : "unread"}`} onClick={() => onOpen(question)}>
+      {!question.read && <span className="am-msg-dot" />}
+      <div className="am-msg-avatar">?</div>
+      <div className="am-msg-body">
+        <div className="am-msg-top">
+          <span className="am-msg-title">{question.name}</span>
+          <span className="am-msg-type-badge" style={{ background: "#dcfce7", color: "#166534" }}>{question.category}</span>
+        </div>
+        <div className="am-msg-sub">{formatDateTime(question.createdAt)}</div>
+        <div className="am-msg-snippet">{question.question}</div>
+      </div>
+      <div className="am-msg-right">
+        <button className="am-btn-delete" onClick={(e) => { e.stopPropagation(); onDelete(question); }}>🗑</button>
+      </div>
+    </div>
+  );
+}
+
+function QuestionDetailModal({ question, onClose }) {
+  return (
+    <div className="am-modal-overlay" onClick={onClose}>
+      <div className="am-modal" onClick={(e) => e.stopPropagation()}>
+        <div className="am-modal-header">
+          <h3>Legal Question</h3>
+          <button className="am-modal-close" onClick={onClose}>✕</button>
+        </div>
+        <div className="am-msg-detail">
+          <div className="am-detail-row"><strong>Category:</strong> {question.category}</div>
+          <div className="am-detail-row"><strong>From:</strong> {question.name}</div>
+          {question.phone && <div className="am-detail-row"><strong>Phone:</strong> {question.phone}</div>}
+          <div className="am-detail-row"><strong>Received:</strong> {formatDateTime(question.createdAt)}</div>
+          <div className="am-detail-message"><strong>Question:</strong><p>{question.question}</p></div>
+          <div className="am-detail-message"><strong>Description:</strong><p>{question.description}</p></div>
+        </div>
+        <div className="am-modal-actions"><button className="am-btn-secondary" onClick={onClose}>Close</button></div>
+      </div>
+    </div>
+  );
+}
+
 // ══════════════════════════════════════════════════════════════
 //  MAIN ADMIN PAGE COMPONENT
 // ══════════════════════════════════════════════════════════════
@@ -451,7 +494,8 @@ export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
   const [advocates, setAdvocates] = useState([]);
   const [messages, setMessages] = useState([]);
-  const [tab, setTab] = useState("pending"); // pending | all | messages
+  const [questions, setQuestions] = useState([]);
+  const [tab, setTab] = useState("pending"); // pending | all | messages | questions
   const [statusFilter, setStatusFilter] = useState("all");
   const [search, setSearch] = useState("");
   const [msgTypeFilter, setMsgTypeFilter] = useState("all"); // all | contact | partner
@@ -461,6 +505,8 @@ export default function AdminPage() {
   const [deleting, setDeleting] = useState(null);      // advocate pending delete confirm
   const [openMessage, setOpenMessage] = useState(null); // message being viewed
   const [deletingMsg, setDeletingMsg] = useState(null); // message pending delete confirm
+  const [openQuestion, setOpenQuestion] = useState(null);
+  const [deletingQuestion, setDeletingQuestion] = useState(null);
 
   useEffect(() => {
     setAuthed(sessionStorage.getItem(ADMIN_SESSION_KEY) === "true");
@@ -468,18 +514,20 @@ export default function AdminPage() {
 
   const refreshAdvocates = () => setAdvocates(getAdvocates());
   const refreshMessages  = () => setMessages(getMessages());
+  const refreshQuestions = () => setQuestions(getQuestions());
 
   useEffect(() => {
     if (authed) {
       refreshAdvocates();
       refreshMessages();
+      refreshQuestions();
     }
   }, [authed]);
 
   // Pick up new submissions if Contact/Partners were filled out in another tab
   useEffect(() => {
     if (!authed) return;
-    const onFocus = () => { refreshAdvocates(); refreshMessages(); };
+    const onFocus = () => { refreshAdvocates(); refreshMessages(); refreshQuestions(); };
     window.addEventListener("focus", onFocus);
     return () => window.removeEventListener("focus", onFocus);
   }, [authed]);
@@ -493,6 +541,7 @@ export default function AdminPage() {
   const approved = useMemo(() => advocates.filter(a => a.status === "approved"), [advocates]);
   const rejected = useMemo(() => advocates.filter(a => a.status === "rejected"), [advocates]);
   const unreadMessages = useMemo(() => messages.filter(m => !m.read), [messages]);
+  const unreadQuestions = useMemo(() => questions.filter(q => !q.read), [questions]);
 
   const visibleAll = useMemo(() => {
     let list = advocates;
@@ -550,6 +599,20 @@ export default function AdminPage() {
     refreshMessages();
   };
 
+  const handleOpenQuestion = (question) => {
+    if (!question.read) {
+      markQuestionAsRead(question.id);
+      refreshQuestions();
+    }
+    setOpenQuestion(question);
+  };
+
+  const handleConfirmDeleteQuestion = () => {
+    deleteQuestion(deletingQuestion.id);
+    setDeletingQuestion(null);
+    refreshQuestions();
+  };
+
   if (!authed) return <AdminLogin onLogin={() => setAuthed(true)} />;
 
   return (
@@ -574,6 +637,7 @@ export default function AdminPage() {
           <StatCard icon="⏳" label="Pending Approval" value={pending.length} tone="am-tone-warn" />
           <StatCard icon="✅" label="Approved" value={approved.length} tone="am-tone-good" />
           <StatCard icon="✉️" label="Unread Messages" value={unreadMessages.length} tone="am-tone-warn" />
+          <StatCard icon="❓" label="New Questions" value={unreadQuestions.length} tone="am-tone-warn" />
         </div>
 
         {/* ── Tabs ── */}
@@ -586,6 +650,9 @@ export default function AdminPage() {
           </button>
           <button className={`am-tab ${tab === "messages" ? "active" : ""}`} onClick={() => setTab("messages")}>
             Messages {unreadMessages.length > 0 && <span className="am-tab-badge">{unreadMessages.length}</span>}
+          </button>
+          <button className={`am-tab ${tab === "questions" ? "active" : ""}`} onClick={() => setTab("questions")}>
+            Questions {unreadQuestions.length > 0 && <span className="am-tab-badge">{unreadQuestions.length}</span>}
           </button>
         </div>
 
@@ -675,6 +742,20 @@ export default function AdminPage() {
           </div>
         )}
 
+        {tab === "questions" && (
+          <div className="am-section">
+            {questions.length === 0 ? (
+              <div className="am-empty">❓ No legal questions submitted yet.</div>
+            ) : (
+              <div className="am-msg-list">
+                {questions.map((question) => (
+                  <QuestionRow key={question.id} question={question} onOpen={handleOpenQuestion} onDelete={setDeletingQuestion} />
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
       </div>
 
       {adding && (
@@ -715,6 +796,17 @@ export default function AdminPage() {
           itemName="this message"
           onCancel={() => setDeletingMsg(null)}
           onConfirm={handleConfirmDeleteMessage}
+        />
+      )}
+
+      {openQuestion && <QuestionDetailModal question={openQuestion} onClose={() => setOpenQuestion(null)} />}
+
+      {deletingQuestion && (
+        <ConfirmDeleteModal
+          label="Delete this question?"
+          itemName="this legal question"
+          onCancel={() => setDeletingQuestion(null)}
+          onConfirm={handleConfirmDeleteQuestion}
         />
       )}
     </div>

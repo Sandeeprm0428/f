@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import './App.css';
 import Home from './pages/Home';
@@ -12,33 +12,42 @@ import Adminpage from './pages/Adminpage';
 import Contact from './pages/Contact';
 import Partners from './pages/Partners';
 import AboutUs from './pages/Aboutus';
-
+import AskQuestion from "./pages/Askquestion";
+import LegalDocuments from "./pages/LegalDocuments";
+import BareActs from "./pages/BareActs";
+import LegalNews from "./pages/LegalNews";
 
 
 function App() {
+  const location = useLocation();
+  const isAdminPortal = location.pathname === '/admin';
+  const isAdvocatePortal = location.pathname === '/advocate-dashboard';
+  const isAdvocateLogin = location.pathname === '/login';
+
   return (
     <div className="App">
-      <Navbar />
+      {!isAdminPortal && !isAdvocatePortal && !isAdvocateLogin && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/find-lawyer" element={<div style={{padding: "100px"}}>Find Lawyer Page Content</div>} />
         <Route path="/legal-advice" element={<div style={{padding: "100px"}}>Legal Advice Page Content</div>} />
-        <Route path="/legal-advice/documents" element={<div style={{padding: "100px"}}>Legal Documents Page Content</div>} />
-        <Route path="/legal-advice/bare-acts" element={<div style={{padding: "100px"}}>Bare Acts Page Content</div>} />
-        <Route path="/legal-advice/news" element={<div style={{padding: "100px"}}>Legal News Page Content</div>} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Partners" element={<Partners />} />
+        <Route path="/legal-advice/ask-question" element={<AskQuestion />} />
+        <Route path="/legal-advice/documents" element={<LegalDocuments />} />
+        <Route path="/legal-advice/bare-acts" element={<BareActs />} />
+        <Route path="/legal-advice/news" element={<LegalNews />} /> 
 
         <Route path="/AdvocatesList" element={<AdvocatesList />} /> 
         <Route path="/admin" element={<Adminpage />} />
-<Route path="/signup" element={<Signup />} />    
-  <Route path="/login" element={<Login />} />
-  <Route path="/Aboutus" element={<AboutUs />} />
-  <Route path="/Contact" element={<Contact />} />
-  <Route path="/Partners" element={<Partners />} />
+        <Route path="/signup" element={<Signup />} />    
+        <Route path="/login" element={<Login />} />
+        <Route path="/Aboutus" element={<AboutUs />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Partners" element={<Partners />} />
 
   <Route path="/advocate-dashboard" element={<AdvocateDashboard />} />        <Route path="/download" element={<div style={{padding: "100px"}}>Download Apps Page Content</div>} />
         

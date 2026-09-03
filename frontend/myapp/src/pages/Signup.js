@@ -9,7 +9,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { getAdvocateByEmail, addAdvocate } from "../data/Advocatesstore";
+import { getAdvocateByEmail, addAdvocate, uploadAdvocateAvatar } from "../data/Advocatesstore";
 import { getClientByEmail, addClient } from "../data/Clientsstore";
 import "./Signup.css";
 
@@ -213,7 +213,7 @@ export default function Signup() {
   const [adv, setAdv] = useState({
     fullName:"", email:"", phone:"", password:"", confirmPw:"",
     barId:"", speciality:"", court:"", barCouncil:"",
-    experience:"", city:"", fee:"", bio:"", agreeTerms: false,
+    experience:"", city:"", fee:"", bio:"", avatarData:"", agreeTerms: false,
   });
   const [advErr, setAdvErr] = useState({});
 
@@ -234,6 +234,23 @@ export default function Signup() {
   const setA = (k, v) => {
     setAdv(p => ({ ...p, [k]: v }));
     setAdvErr(p => ({ ...p, [k]: "" }));
+  };
+
+  const handleAvatarChange = (event) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      setAdvErr((p) => ({ ...p, avatarData: "Please select an image file" }));
+      return;
+    }
+    if (file.size > 2 * 1024 * 1024) {
+      setAdvErr((p) => ({ ...p, avatarData: "Image must be smaller than 2 MB" }));
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => setA("avatarData", reader.result);
+    reader.readAsDataURL(file);
   };
 
   // ── Fill from JSON advocate ───────────────────────────────
@@ -284,6 +301,7 @@ export default function Signup() {
     if (!adv.speciality)            e.speciality = "Select a practice area";
     if (!adv.court)                 e.court      = "Select primary court";
     if (!adv.city)                  e.city       = "Select your city";
+    if (!adv.avatarData)            e.avatarData  = "Profile image is required";
     if (!adv.password)              e.password   = "Password is required";
     else if (adv.password.length<6) e.password   = "Min 6 characters";
     if (adv.password !== adv.confirmPw) e.confirmPw = "Passwords do not match";
@@ -301,7 +319,7 @@ export default function Signup() {
     setLoading(true);
 
     // Simulate a short delay so the loading state is visible
-    setTimeout(() => {
+    setTimeout(async () => {
       try {
         if (tab === "client") {
           const emailLower = client.email.trim().toLowerCase();
@@ -336,6 +354,8 @@ export default function Signup() {
             return;
           }
 
+          const avatar = await uploadAdvocateAvatar(adv.fullName.trim(), adv.avatarData);
+
           addAdvocate({
             name:       adv.fullName.trim(),
             email:      emailLower,
@@ -349,6 +369,7 @@ export default function Signup() {
             city:       adv.city,
             fee:        adv.fee || "Not specified",
             bio:        adv.bio,
+            avatar,
             status:     "pending", // must be approved on the Admin page before login works
           });
 
@@ -610,6 +631,24 @@ export default function Signup() {
                   disabled={loading} />
                 <span className="su-char-count">{adv.bio.length}/300</span>
               </div>
+            </Field>
+
+            <Field label="Profile Image" required error={advErr.avatarData}
+              hint="Use a clear JPG, PNG, or WEBP image up to 2 MB">
+              <input
+                type="file"
+                accept="image/png,image/jpeg,image/webp"
+                className="su-avatar-input"
+                onChange={handleAvatarChange}
+                disabled={loading}
+              />
+              {adv.avatarData && (
+                <img
+                  src={adv.avatarData}
+                  alt="Profile preview"
+                  className="su-avatar-preview"
+                />
+              )}
             </Field>
 
             <div className="su-form-section-title" style={{ marginTop: 8 }}>Security</div>

@@ -182,7 +182,10 @@ export default function AdvocateDashboard() {
           <span style={{ color:"#dc2626", fontWeight:800 }}>4</span>
           <span style={{ color:"#16a34a", fontWeight:800 }}>u</span>
         </Link>
-        <button className="ad-logout-btn" onClick={handleLogout}>Logout ↩</button>
+        <div className="ad-topbar-actions">
+          <Link to="/" className="ad-site-btn">Go to Site</Link>
+          <button className="ad-logout-btn" onClick={handleLogout}>Logout ↩</button>
+        </div>
       </div>
 
       <div className="ad-container">

@@ -30,6 +30,40 @@ const getAvatarColor = (name = "") => {
   return palette[sum % palette.length];
 };
 
+function AdvocateAvatar({ advocate }) {
+  const [imagePath, setImagePath] = useState(advocate.avatar || "");
+  const [failed, setFailed] = useState(false);
+
+  const handleImageError = () => {
+    if (!imagePath || !advocate.avatar) {
+      setFailed(true);
+      return;
+    }
+
+    const basePath = advocate.avatar.replace(/\.(png|jpe?g|webp)$/i, "");
+    const candidates = [`${basePath}.jpg`, `${basePath}.jpeg`, `${basePath}.png`, `${basePath}.webp`];
+    const nextPath = candidates.find((candidate) => candidate !== imagePath);
+    if (nextPath) setImagePath(nextPath);
+    else setFailed(true);
+  };
+
+  return (
+    <div
+      className="lw-adv-avatar"
+      style={{ background: !failed && imagePath ? "transparent" : getAvatarColor(advocate.name) }}
+    >
+      {!failed && imagePath ? (
+        <img
+          src={imagePath}
+          alt={advocate.name}
+          className="lw-adv-avatar-img"
+          onError={handleImageError}
+        />
+      ) : getInitials(advocate.name)}
+    </div>
+  );
+}
+
 export default function AdvocatesList() {
   const navigate = useNavigate();
   const [city, setCity] = useState("");
@@ -131,16 +165,7 @@ export default function AdvocatesList() {
                   onClick={() => navigate(`/profile/${adv.id}`)}
                 >
                   <div className="lw-adv-top">
-                    <div
-                      className="lw-adv-avatar"
-                      style={{ background: adv.avatar ? 'transparent' : getAvatarColor(adv.name) }}
-                    >
-                      {adv.avatar ? (
-                        <img src={adv.avatar} alt={adv.name} className="lw-adv-avatar-img" />
-                      ) : (
-                        getInitials(adv.name)
-                      )}
-                    </div>
+                    <AdvocateAvatar advocate={adv} />
                     <div className="lw-adv-info">
                       <div className="lw-adv-name">{adv.name}</div>
                       <div className="lw-adv-spec">{adv.speciality || adv.practiceArea}</div>

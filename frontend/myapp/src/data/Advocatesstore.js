@@ -40,11 +40,22 @@ function persist(list) {
   localStorage.setItem(STORE_KEY, JSON.stringify(list));
 }
 
+function getAvatarPath(advocate) {
+  const slug = String(advocate.name || `advocate-${advocate.id}`)
+    .replace(/^adv\.\s*/i, "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+  return `/images/${slug || `advocate-${advocate.id}`}.png`;
+}
+
 function normalizeSeedEntry(a, id) {
   return {
     ...a,
     id,
-    avatar: a.avatar || "",
+    avatar: a.avatar || getAvatarPath({ ...a, id }),
     languages: a.languages || [],
     status: a.status || "approved",
   };
@@ -131,18 +142,31 @@ export function getAdvocateByEmail(email) {
   return getAdvocates().find((a) => a.email.toLowerCase() === e) || null;
 }
 
+export async function uploadAdvocateAvatar(name, avatarData) {
+  const response = await fetch("/api/advocates/avatar", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, avatarData }),
+  });
+
+  if (!response.ok) throw new Error("Could not save the profile image");
+  const result = await response.json();
+  return result.avatar;
+}
+
 export function addAdvocate(advocate) {
   const list = getAdvocates();
   const nextId = list.length ? Math.max(...list.map((a) => a.id)) + 1 : 1;
   const newAdvocate = {
+    ...advocate,
     id: nextId,
+    practiceArea: advocate.practiceArea || advocate.speciality || "",
     rating: 0,
     cases: 0,
     languages: [],
     availability: "Not available",
+    avatar: getAvatarPath({ ...advocate, id: nextId }),
     status: "pending",
-    ...advocate,
-    id: nextId, // id is always assigned by the store — never overridable
   };
   const updated = [...list, newAdvocate];
   persist(updated);
@@ -164,7 +188,22 @@ export function deleteAdvocate(id) {
 }
 
 export function approveAdvocate(id) {
-  return updateAdvocate(id, { status: "approved" });
+  const approved = updateAdvocate(id, { status: "approved" });
+
+  if (approved) {
+    fetch("/api/advocates/approved", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(approved),
+    })
+      .then((response) => response.ok ? response.json() : null)
+      .then((saved) => {
+        if (saved?.avatar) updateAdvocate(id, { avatar: saved.avatar });
+      })
+      .catch(() => {});
+  }
+
+  return approved;
 }
 
 export function rejectAdvocate(id) {
