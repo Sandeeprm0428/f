@@ -14,9 +14,8 @@ import Partners from './pages/Partners';
 import AboutUs from './pages/Aboutus';
 import AskQuestion from "./pages/Askquestion";
 import LegalDocuments from "./pages/LegalDocuments";
-import BareActs from "./pages/BareActs";
 import LegalNews from "./pages/LegalNews";
-
+import BareActs from "./pages/BareActs";
 
 function App() {
   const location = useLocation();
@@ -49,7 +48,7 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Partners" element={<Partners />} />
 
-  <Route path="/advocate-dashboard" element={<AdvocateDashboard />} />        <Route path="/download" element={<div style={{padding: "100px"}}>Download Apps Page Content</div>} />
+        <Route path="/advocate-dashboard" element={<AdvocateDashboard />} />        <Route path="/download" element={<div style={{padding: "100px"}}>Download Apps Page Content</div>} />
         
       </Routes>
     </div>
