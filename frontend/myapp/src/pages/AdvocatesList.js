@@ -1,11 +1,18 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { getAdvocates } from "../data/Advocatesstore";
 import "./AdvocatesList.css";
 
 const CITIES = ["Bengaluru","Gokak","Delhi","Hyderabad","Kolkata","Pune","Ahmedabad","Jaipur","Lucknow","Chandigarh","Kochi","Bhopal","Nagpur","Surat"];
 const PRACTICE_AREAS = ["Divorce","Criminal","Property","Cheque Bounce","Civil","GST","Tax","Corporate","Family","Labour","Consumer","Cyber","Immigration","Banking","Intellectual Property"];
 const POPULAR = ["Divorce","Criminal","Property","Cheque Bounce","Civil","GST","Tax"];
+const CATEGORY_PRACTICES = {
+  family: ["Family", "Divorce"],
+  criminal: ["Criminal", "Cyber"],
+  property: ["Property"],
+  civil: ["Civil", "Cheque Bounce", "Banking"],
+  corporate: ["Corporate", "GST", "Tax", "Intellectual Property"],
+};
 
 // Read through advocatesStore (not raw advocates.json) so the id
 // used for profile links always matches the id AdvocateDashboard.js
@@ -13,7 +20,7 @@ const POPULAR = ["Divorce","Criminal","Property","Cheque Bounce","Civil","GST","
 // the public — pending/rejected signups stay hidden from clients.
 const ADVOCATES = getAdvocates().filter((a) => a.status === "approved");
 
-const normalize = (value = "") => value.toString().trim().toLowerCase();
+const normalize = (value = "") => (value ?? "").toString().trim().toLowerCase();
 
 const getInitials = (name = "") =>
   name
@@ -28,6 +35,12 @@ const getAvatarColor = (name = "") => {
   const palette = ["#2563eb", "#16a34a", "#7c3aed", "#dc2626", "#ea580c", "#0891b2", "#0f766e", "#9333ea"];
   const sum = name.split("").reduce((total, char) => total + char.charCodeAt(0), 0);
   return palette[sum % palette.length];
+};
+
+const matchesPractice = (person, practices) => {
+  if (!practices.length) return true;
+  const personPractice = normalize(person.practiceArea || person.speciality || "");
+  return practices.some((practice) => personPractice === normalize(practice));
 };
 
 function AdvocateAvatar({ advocate }) {
@@ -66,18 +79,42 @@ function AdvocateAvatar({ advocate }) {
 
 export default function AdvocatesList() {
   const navigate = useNavigate();
-  const [city, setCity] = useState("");
-  const [practice, setPractice] = useState("");
+  const [searchParams] = useSearchParams();
+  const category = normalize(searchParams.get("cat"));
+  const categoryPractices = CATEGORY_PRACTICES[category] || [];
+  const queryCity = searchParams.get("city") || "";
+  const queryPractice = searchParams.get("area") || "";
+  const [city, setCity] = useState(queryCity);
+  const [practice, setPractice] = useState(queryPractice);
   const [showAllAdvocates, setShowAllAdvocates] = useState(false);
 
   // Keep track of all items that match the filters
-  const [filteredResults, setFilteredResults] = useState(ADVOCATES);
+  const [filteredResults, setFilteredResults] = useState(() =>
+    ADVOCATES.filter((person) => {
+      const cityMatch = !queryCity || normalize(person.city) === normalize(queryCity);
+      const practices = queryPractice ? [queryPractice] : categoryPractices;
+      return cityMatch && matchesPractice(person, practices);
+    })
+  );
+
+  useEffect(() => {
+    setCity(queryCity);
+    setPractice(queryPractice);
+    setFilteredResults(ADVOCATES.filter((person) => {
+      const cityMatch = !queryCity || normalize(person.city) === normalize(queryCity);
+      const practices = queryPractice ? [queryPractice] : categoryPractices;
+      return cityMatch && matchesPractice(person, practices);
+    }));
+    setShowAllAdvocates(false);
+  }, [category, queryCity, queryPractice]);
 
   const filterAdvocates = (selectedCity = "", selectedPractice = "") => {
     return ADVOCATES.filter((person) => {
       const cityMatch = !selectedCity || normalize(person.city) === normalize(selectedCity);
       const personPractice = person.practiceArea || person.speciality || "";
-      const practiceMatch = !selectedPractice || normalize(personPractice) === normalize(selectedPractice);
+      const practiceMatch = selectedPractice
+        ? normalize(personPractice) === normalize(selectedPractice)
+        : matchesPractice(person, categoryPractices);
       return cityMatch && practiceMatch;
     });
   };
@@ -112,14 +149,32 @@ export default function AdvocatesList() {
         <div className="lw-search-bar">
           <div className="lw-search-field">
             <span className="lw-search-field-icon">📍</span>
-            <select value={city} onChange={e => setCity(e.target.value)} className="lw-select">
+            <select
+              value={city}
+              onChange={e => {
+                const nextCity = e.target.value;
+                setCity(nextCity);
+                setFilteredResults(filterAdvocates(nextCity, practice));
+                setShowAllAdvocates(false);
+              }}
+              className="lw-select"
+            >
               <option value="">Select City</option>
               {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
           <div className="lw-search-field">
             <span className="lw-search-field-icon">🏛️</span>
-            <select value={practice} onChange={e => setPractice(e.target.value)} className="lw-select">
+            <select
+              value={practice}
+              onChange={e => {
+                const nextPractice = e.target.value;
+                setPractice(nextPractice);
+                setFilteredResults(filterAdvocates(city, nextPractice));
+                setShowAllAdvocates(false);
+              }}
+              className="lw-select"
+            >
               <option value="">Select Practice Areas</option>
               {PRACTICE_AREAS.map(a => <option key={a} value={a}>{a}</option>)}
             </select>

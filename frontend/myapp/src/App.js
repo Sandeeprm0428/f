@@ -18,6 +18,7 @@ import LegalNews from "./pages/LegalNews";
 import BareActs from "./pages/BareActs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermOfUse";
+import TalkToAdvocate from "./pages/TalkToAdvocate";
 
 function App() {
   const location = useLocation();
@@ -32,7 +33,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/find-lawyer" element={<div style={{padding: "100px"}}>Find Lawyer Page Content</div>} />
+        <Route path="/find-lawyer" element={<AdvocatesList />} />
+        <Route path="/talk-to-advocate" element={<TalkToAdvocate />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="/legal-advice" element={<div style={{padding: "100px"}}>Legal Advice Page Content</div>} />

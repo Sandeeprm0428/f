@@ -62,12 +62,14 @@
 .lw-profile-name {
   font-size: 2rem;
   font-weight: 800;
+  color: #ffffff;
   margin: 0 0 6px 0;
   line-height: 1.2;
 }
 
 .lw-profile-spec {
   font-size: 1.05rem;
+  color: #ffffff;
   opacity: 0.95;
   font-weight: 600;
   margin-bottom: 4px;
@@ -75,6 +77,7 @@
 
 .lw-profile-meta {
   font-size: 0.95rem;
+  color: #ffffff;
   opacity: 0.85;
 }
 

@@ -4,13 +4,14 @@ import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import AdvocatesList from "./AdvocatesList";
 import { getAdvocates } from "../data/Advocatesstore";
+import laptopImage from "../images/Laptop.png";
 
 
 const PRACTICE_TYPES = [
-  { icon:"👨‍👩‍👧",       label:"Person / Family",        desc:"Divorce, custody, marriage, adoption, maintenance" },
-  { icon:"🔒",      label:"Criminal / Property",   desc:"FIR, bail, property disputes, POCSO, cybercrime" },
-  { icon:"⚖️",      label:"Civil / Debt Matter",   desc:"Civil suits, debt recovery, money recovery, NI Act" },
-  { icon:"🏢",      label:"Corporate Law",          desc:"Company registration, GST, tax, compliance, IPR" },
+  { icon:"👨‍👩‍👧", label:"Person / Family", category:"family", desc:"Divorce, custody, marriage, adoption, maintenance" },
+  { icon:"🔒", label:"Criminal / Property", category:"criminal", desc:"FIR, bail, property disputes, POCSO, cybercrime" },
+  { icon:"⚖️", label:"Civil / Debt Matter", category:"civil", desc:"Civil suits, debt recovery, money recovery, NI Act" },
+  { icon:"🏢", label:"Corporate Law", category:"corporate", desc:"Company registration, GST, tax, compliance, IPR" },
 ];
 
 // Read through advocatesStore (not raw advocates.json) so ids stay
@@ -137,43 +138,18 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="lw-hero-phone">
-            <div className="lw-phone-frame">
-              <div className="lw-phone-notch" />
-              <div className="lw-phone-status">
-                <span>12:40</span>
-                <span>📶 5G</span>
-              </div>
-              <div className="lw-phone-screen">
-                <div className="lw-phone-header">
-                  <span style={{fontSize:11,color:"#555"}}>☰</span>
-                  <div style={{fontSize:13,fontWeight:700}}><span style={{color:"#2563eb"}}>Advocates</span><span style={{color:"#dc2626"}}> Hub</span></div>
-                  <div style={{width:24,height:24,borderRadius:"50%",background:"#2563eb",color:"#fff",fontSize:10,display:"flex",alignItems:"center",justifyContent:"center"}}>V</div>
-                </div>
-                {[
-                  {icon:"📜",title:"COI",sub:"The Constitution of India"},
-                  {icon:"📚",title:"Bare Acts",sub:"BNS, BNSS, BSA, pocso, etc...",badge:"Updated"},
-                  {icon:"❓",title:"Question Answer",sub:"Legal Question & Answer"},
-                ].map(item=>(
-                  <div key={item.title} className="lw-phone-item">
-                    <span style={{fontSize:20}}>{item.icon}</span>
-                    <div style={{flex:1}}>
-                      <div style={{fontSize:12,fontWeight:600}}>{item.title}</div>
-                      <div style={{fontSize:10,color:"#9ca3af"}}>{item.sub}</div>
-                    </div>
-                    {item.badge&&<span style={{background:"#16a34a",color:"#fff",fontSize:9,padding:"1px 5px",borderRadius:4}}>{item.badge}</span>}
-                    <span style={{color:"#9ca3af",fontSize:14}}>›</span>
-                  </div>
-                ))}
-                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6,padding:"4px 8px"}}>
-                  {["⚖️ Judgment","🤖 Judgment AI","💬 Legal advice","📄 11000+ Drafting","📋 New Act","📋 Old Act"].map(item=>(
-                    <div key={item} style={{background:"#f9fafb",border:"1px solid #e5e7eb",borderRadius:6,padding:"6px 8px",fontSize:10,fontWeight:500,display:"flex",alignItems:"center",gap:4}}>
-                      {item} <span style={{marginLeft:"auto",color:"#9ca3af"}}>›</span>
-                    </div>
-                  ))}
-                </div>
+          <div className="lw-hero-laptop">
+            <div className="lw-laptop-screen-frame">
+              <div className="lw-laptop-camera" />
+              <div className="lw-laptop-screen">
+                <img
+                  src={laptopImage}
+                  alt="Advocates Hub legal platform"
+                  className="lw-laptop-screen-image"
+                />
               </div>
             </div>
+            <div className="lw-laptop-base"><span /></div>
           </div>
         </div>
       </section>
@@ -196,7 +172,7 @@ export default function Home() {
           <div className="lw-practice-grid">
             {PRACTICE_TYPES.map(pt => (
               <button key={pt.label} className="lw-practice-card"
-                onClick={() => navigate(`/find-lawyer?cat=${pt.label.toLowerCase().replace(/\s+/g,"-")}`)}>
+                onClick={() => navigate(`/find-lawyer?cat=${pt.category}`)}>
                 <span className="lw-practice-icon">{pt.icon}</span>
                 <div className="lw-practice-label">{pt.label}</div>
                 <div className="lw-practice-desc">{pt.desc}</div>
