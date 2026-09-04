@@ -130,7 +130,7 @@ export default function Home() {
               Advocates Hub helps you find advocates, understand Indian laws, and learn your legal rights. Explore justice, legal updates, and expert guidance in one app.
             </p>
             <div className="lw-hero-btns">
-              <button className="lw-btn-primary" onClick={() => navigate("/AdvocatesList")}>
+              <button className="lw-btn-primary" onClick={() => navigate("/talk-to-advocate")}>
                 Talk with Advocate
               </button>
               <button className="lw-btn-outline" onClick={() => navigate("/download")}>

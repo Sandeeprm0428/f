@@ -1700,5 +1700,23 @@
     "availability": "Not available",
     "bio": "HI ",
     "avatar": "/images/kotresh.png"
+  },
+  {
+    "id": 82,
+    "name": "manu",
+    "city": "Bengaluru",
+    "practiceArea": "Family Law",
+    "speciality": "Family Law",
+    "experience": "1–3 years",
+    "rating": 0,
+    "cases": 0,
+    "fee": "8473",
+    "phone": "9876545678",
+    "email": "m@gmail.com",
+    "password": "San@0428",
+    "languages": [],
+    "availability": "Not available",
+    "bio": "kjcca",
+    "avatar": "/images/manu.png"
   }
 ]

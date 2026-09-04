@@ -46,7 +46,7 @@ function App() {
         <Route path="/legal-advice/bare-acts" element={<BareActs />} />
         <Route path="/legal-advice/news" element={<LegalNews />} /> 
 
-        <Route path="/AdvocatesList" element={<AdvocatesList />} /> 
+        <Route path="/AdvocatesList" element={<TalkToAdvocate />} /> 
         <Route path="/admin" element={<Adminpage />} />
         <Route path="/signup" element={<Signup />} />    
         <Route path="/login" element={<Login />} />

@@ -165,7 +165,7 @@ export function addAdvocate(advocate) {
     cases: 0,
     languages: [],
     availability: "Not available",
-    avatar: getAvatarPath({ ...advocate, id: nextId }),
+    avatar: advocate.avatar || getAvatarPath({ ...advocate, id: nextId }),
     status: "pending",
   };
   const updated = [...list, newAdvocate];
