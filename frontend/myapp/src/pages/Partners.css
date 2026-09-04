@@ -22,7 +22,7 @@
 .pt-hero-badge {
   display: inline-block;
   background: rgba(255, 255, 255, 0.1);
-  color: #93c5fd;
+  color: #ffffff;
   font-size: 0.875rem;
   font-weight: 600;
   padding: 0.35rem 1rem;
@@ -34,6 +34,7 @@
 .pt-hero-title {
   font-size: 2.75rem;
   font-weight: 800;
+  color: #ffffff;
   line-height: 1.2;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
@@ -41,7 +42,7 @@
 
 .pt-hero-sub {
   font-size: 1.125rem;
-  color: #cbd5e1;
+  color: #ffffff;
   max-width: 650px;
   margin: 0 auto;
   line-height: 1.6;

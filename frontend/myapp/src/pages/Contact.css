@@ -74,6 +74,7 @@
 .ct-hero-title {
   font-size: 2.75rem;
   font-weight: 800;
+  color: #ffffff;
   letter-spacing: -0.025em;
   margin-bottom: 1rem;
   line-height: 1.2;
@@ -81,7 +82,7 @@
 
 .ct-hero-sub {
   font-size: 1.125rem;
-  color: #94a3b8;
+  color: #ffffff;
   max-width: 600px;
   margin: 0 auto;
 }

@@ -53,6 +53,7 @@
 .ab-hero-title {
   font-size: 2.75rem;
   font-weight: 800;
+  color: #ffffff;
   letter-spacing: -0.025em;
   margin-bottom: 1.25rem;
   line-height: 1.2;
@@ -60,7 +61,7 @@
 
 .ab-hero-sub {
   font-size: 1.125rem;
-  color: #94a3b8;
+  color: #ffffff;
   max-width: 650px;
   margin: 0 auto;
 }
@@ -462,6 +463,39 @@
   color: var(--ab-text-muted);
   line-height: 1.6;
   margin-bottom: 1.5rem;
+}
+
+.ab-modal-contact {
+  display: grid;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--ab-border-color);
+  border-radius: 8px;
+  background: var(--ab-bg-light);
+}
+
+.ab-modal-contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 0;
+  color: var(--ab-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.ab-modal-contact-link:hover {
+  color: var(--ab-accent);
+  text-decoration: underline;
+}
+
+.ab-modal-contact-icon {
+  flex: 0 0 auto;
+  font-size: 1rem;
 }
 
 .ab-modal-tags-title {

@@ -363,6 +363,11 @@
   background-color: #1d4ed8;
 }
 
+.lw-navbar a:hover,
+.lw-navbar a:hover * {
+  text-decoration: none;
+}
+
 
 /* ============================================================
    8. Responsive Media Queries (Tablets, Laptops & Mobile)

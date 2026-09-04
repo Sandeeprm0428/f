@@ -30,6 +30,8 @@ const TEAM = [
     role: "Founder & CEO", 
     photo: chetanImg, 
     color: "#2563eb",
+    email: "chetanchandaragi@gmail.com",
+    phone: "8884393044",
     bio: "Leading AdvocatesHub's vision to revolutionize access to legal services across India. Passionate about technology, transparency, and bridging the gap between clients and verified legal professionals.",
     expertise: ["Strategic Growth", "Legal Tech", "Operations"]
   },
@@ -39,6 +41,8 @@ const TEAM = [
     role: "Head of Legal Ops", 
     photo: null, 
     color: "#16a34a",
+    email: "vidhwat@gmail.com",
+    phone: "19346738291",
     bio: "Overseeing day-to-day legal operations and verification workflows. Ensures every advocate on the platform meets rigorous professional compliance standards.",
     expertise: ["Compliance", "Bar Verification", "Operations"]
   },
@@ -48,6 +52,8 @@ const TEAM = [
     role: "Head of Partnerships", 
     photo: sandeepImg, 
     color: "#7c3aed",
+    email: "sandeeprmasaguppi@gmail.com",
+    phone: "9108717353",
     bio: "Driving strategic partnerships and expanding the advocate network into new cities and communities to make legal help universally accessible.",
     expertise: ["Strategic Alliances", "Network Expansion", "Client Relations"]
   },
@@ -174,6 +180,17 @@ export default function AboutUs() {
                 {selectedMember.role}
               </span>
               <p className="ab-modal-bio">{selectedMember.bio}</p>
+
+              <div className="ab-modal-contact">
+                <a href={`mailto:${selectedMember.email}`} className="ab-modal-contact-link">
+                  <span className="ab-modal-contact-icon" aria-hidden="true">✉</span>
+                  {selectedMember.email}
+                </a>
+                <a href={`tel:${selectedMember.phone}`} className="ab-modal-contact-link">
+                  <span className="ab-modal-contact-icon" aria-hidden="true">☎</span>
+                  {selectedMember.phone}
+                </a>
+              </div>
               
               <div className="ab-modal-tags-title">Core Focus Areas:</div>
               <div className="ab-modal-tags">

@@ -23,7 +23,7 @@
 
 .ln-badge-top {
   background: rgba(255, 255, 255, 0.15);
-  color: #93c5fd;
+  color: #ffffff;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 13px;
@@ -34,13 +34,14 @@
 
 .ln-title {
   font-size: 34px;
+  color: #ffffff;
   margin: 16px 0 10px;
   font-weight: 700;
 }
 
 .ln-subtitle {
   font-size: 16px;
-  color: #94a3b8;
+  color: #ffffff;
   line-height: 1.5;
   margin: 0;
 }

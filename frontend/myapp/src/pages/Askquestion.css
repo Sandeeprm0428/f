@@ -26,11 +26,13 @@
 .lw-aq-title {
   font-size: 28px;
   font-weight: 800;
+  color: #ffffff;
   margin: 0 0 8px 0;
 }
 
 .lw-aq-subtitle {
   font-size: 16px;
+  color: #ffffff;
   opacity: 0.9;
   margin: 0 0 20px 0;
 }
@@ -40,6 +42,7 @@
   justify-content: center;
   gap: 24px;
   font-size: 13px;
+  color: #ffffff;
   flex-wrap: wrap;
   opacity: 0.95;
 }

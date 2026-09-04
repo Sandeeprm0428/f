@@ -57,6 +57,14 @@ const STATS = [
   { value:"4.9★",    label:"Average Rating"         },
 ];
 
+const FOOTER_LINKS = {
+  "Privacy Policy": "/privacy",
+  "Terms of Use": "/terms",
+  "Contact Us": "/Contact",
+  "About Us": "/Aboutus",
+  "Lawyer Signup": "/signup",
+};
+
 export default function Home() {
   const navigate   = useNavigate();
   const [city,     setCity]     = useState("");
@@ -112,7 +120,7 @@ export default function Home() {
           <div className="lw-hero-text">
             <div className="lw-hero-badge">100% Best Indian Law Platform</div>
             <h1 className="lw-hero-title">
-              Advocates Hub – Find Trusted<br/>Advocates
+              Advocates Hub – Find Trusted Advocates
             </h1>
             <h2 className="lw-hero-sub">
               Get Expert Legal Advice & Learn<br/>Indian Law Easily
@@ -356,7 +364,12 @@ export default function Home() {
               "About Us",
               "Lawyer Signup",
             ].map((l) => (
-              <button key={l} type="button" className="lw-footer-link">
+              <button
+                key={l}
+                type="button"
+                className="lw-footer-link"
+                onClick={() => navigate(FOOTER_LINKS[l])}
+              >
                 {l}
               </button>
             ))}

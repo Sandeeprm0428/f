@@ -29,12 +29,14 @@
 .ba-title {
   font-size: 32px;
   font-weight: 800;
+  color: #ffffff;
   margin: 0 0 8px 0;
   letter-spacing: -0.5px;
 }
 
 .ba-subtitle {
   font-size: 16px;
+  color: #ffffff;
   opacity: 0.85;
   margin: 0 0 24px 0;
   line-height: 1.5;
@@ -44,6 +46,7 @@
   display: flex;
   gap: 20px;
   font-size: 13px;
+  color: #ffffff;
   flex-wrap: wrap;
   font-weight: 500;
   opacity: 0.9;

@@ -1682,5 +1682,23 @@
     "availability": "Not available",
     "bio": "wxs",
     "avatar": "/images/basavaraj-kotagi.png"
+  },
+  {
+    "id": 81,
+    "name": "Kotresh",
+    "city": "Bengaluru",
+    "practiceArea": "Criminal Law",
+    "speciality": "Criminal Law",
+    "experience": "3–5 years",
+    "rating": 0,
+    "cases": 0,
+    "fee": "9666",
+    "phone": "9108713533",
+    "email": "k@gmail.com",
+    "password": "San@0428",
+    "languages": [],
+    "availability": "Not available",
+    "bio": "HI ",
+    "avatar": "/images/kotresh.png"
   }
 ]

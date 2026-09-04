@@ -115,7 +115,7 @@ export default function Navbar() {
           <div className="lw-nav-item">
             <button className={`lw-nav-link lw-has-drop ${openMenu === "lawyer" ? "active" : ""}`}
               onClick={() => toggle("lawyer")}>
-              Find A Lawyer <span className="lw-arrow">▾</span>
+              Find A Lawyer <span className="lw-arrow">▼</span>
             </button>
             {openMenu === "lawyer" && <LawyerMegaMenu onClose={handleLinkClick} />}
           </div>
@@ -124,7 +124,7 @@ export default function Navbar() {
           <div className="lw-nav-item">
             <button className={`lw-nav-link lw-has-drop ${openMenu === "advice" ? "active" : ""}`}
               onClick={() => toggle("advice")}>
-              Legal Advice <span className="lw-arrow">▾</span>
+              Legal Advice <span className="lw-arrow">▼</span>
             </button>
             {openMenu === "advice" && <Dropdown items={LEGAL_ADVICE} onClose={handleLinkClick} />}
           </div>
@@ -133,7 +133,7 @@ export default function Navbar() {
           <div className="lw-nav-item">
             <button className={`lw-nav-link lw-has-drop ${openMenu === "about" ? "active" : ""}`}
               onClick={() => toggle("about")}>
-              About <span className="lw-arrow">▾</span>
+              About <span className="lw-arrow">▼</span>
             </button>
             {openMenu === "about" && <Dropdown items={ABOUT} onClose={handleLinkClick} />}
           </div>
