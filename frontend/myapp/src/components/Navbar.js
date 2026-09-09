@@ -68,7 +68,7 @@ function LawyerMegaMenu({ onClose }) {
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
   
-  // ✅ Fixed: Mobile menu state properly placed inside the component function
+  //Fixed: Mobile menu state properly placed inside the component function
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef(null);
 
@@ -98,7 +98,7 @@ export default function Navbar() {
           <span className="lw-logo-tagline">Best Legal Platform</span>
         </Link>
 
-        {/* ✅ Hamburger Menu Toggle Button for Mobile/Tabs */}
+        {/* Hamburger Menu Toggle Button for Mobile/Tabs */}
         <button 
           className="lw-menu-toggle" 
           onClick={() => setIsMobileMenuOpen(prev => !prev)}
@@ -114,7 +114,7 @@ export default function Navbar() {
           {/* Find A Lawyer */}
           <div className="lw-nav-item">
             <button className={`lw-nav-link lw-has-drop ${openMenu === "lawyer" ? "active" : ""}`}
-              onClick={() => toggle("lawyer")}>
+              onMouseOver={() => toggle("lawyer")}>
               Find A Lawyer <span className="lw-arrow">▼</span>
             </button>
             {openMenu === "lawyer" && <LawyerMegaMenu onClose={handleLinkClick} />}
@@ -123,7 +123,7 @@ export default function Navbar() {
           {/* Legal Advice */}
           <div className="lw-nav-item">
             <button className={`lw-nav-link lw-has-drop ${openMenu === "advice" ? "active" : ""}`}
-              onClick={() => toggle("advice")}>
+              onMouseOver={() => toggle("advice")}>
               Legal Advice <span className="lw-arrow">▼</span>
             </button>
             {openMenu === "advice" && <Dropdown items={LEGAL_ADVICE} onClose={handleLinkClick} />}
@@ -132,7 +132,7 @@ export default function Navbar() {
           {/* About */}
           <div className="lw-nav-item">
             <button className={`lw-nav-link lw-has-drop ${openMenu === "about" ? "active" : ""}`}
-              onClick={() => toggle("about")}>
+              onMouseOver={() => toggle("about")}>
               About <span className="lw-arrow">▼</span>
             </button>
             {openMenu === "about" && <Dropdown items={ABOUT} onClose={handleLinkClick} />}

@@ -14,10 +14,320 @@ import { getClientByEmail, addClient } from "../data/Clientsstore";
 import "./Signup.css";
 
 // ── Data from JSON ────────────────────────────────────────────
+
 const CITIES = [
-  "Bengaluru","Mumbai","Delhi","Chennai","Hyderabad","Kolkata",
-  "Pune","Ahmedabad","Jaipur","Lucknow","Chandigarh","Kochi",
-  "Bhopal","Nagpur","Surat","Indore","Patna","Vadodara",
+  // =========================
+  // BELAGAVI DISTRICT
+  // =========================
+  "Belagavi",
+  "Gokak",
+  "Mudalagi",
+  "Bailhongal",
+  "Ramdurg",
+  "Saundatti",
+  "Athani",
+  "Raibag",
+  "Chikkodi",
+  "Hukeri",
+  "Khanapur",
+  "Nippani",
+  "Kagwad",
+  "Sankeshwar",
+  "Sadalaga",
+  "Kudachi",
+  "Kittur",
+  "Yaragatti",
+
+  // =========================
+  // BAGALKOT DISTRICT
+  // =========================
+  "Bagalkot",
+  "Jamkhandi",
+  "Mudhol",
+  "Badami",
+  "Hungund",
+  "Bilagi",
+  "Banahatti",
+
+  // =========================
+  // VIJAYAPURA DISTRICT
+  // =========================
+  "Vijayapura",
+  "Basavana Bagewadi",
+  "Indi",
+  "Muddebihal",
+  "Sindagi",
+
+  // =========================
+  // DHARWAD DISTRICT
+  // =========================
+  "Dharwad",
+  "Hubli",
+  "Kalghatgi",
+  "Kundgol",
+  "Navalgund",
+
+  // =========================
+  // GADAG DISTRICT
+  // =========================
+  "Gadag",
+  "Nargund",
+  "Lakshmeshwar",
+  "Mundargi",
+  "Ron",
+
+  // =========================
+  // HAVERI DISTRICT
+  // =========================
+  "Haveri",
+  "Byadgi",
+  "Hanagal",
+  "Hirekerur",
+  "Ranebennur",
+  "Savanur",
+  "Shiggaon",
+
+  // =========================
+  // UTTARA KANNADA DISTRICT
+  // =========================
+  "Karwar",
+  "Ankola",
+  "Bhatkal",
+  "Dandeli",
+  "Haliyal",
+  "Honnavar",
+  "Kumta",
+  "Mundgod",
+  "Siddapur",
+  "Sirsi",
+  "Yellapur",
+
+  // =========================
+  // BALLARI DISTRICT
+  // =========================
+  "Ballari",
+  "Siruguppa",
+  "Sandur",
+
+  // =========================
+  // VIJAYANAGARA DISTRICT
+  // =========================
+  "Hospete",
+  "Hagaribommanahalli",
+  "Hoovina Hadagali",
+  "Kudligi",
+  "Harapanahalli",
+
+  // =========================
+  // KOPPAL DISTRICT
+  // =========================
+  "Koppal",
+  "Gangavathi",
+  "Kushtagi",
+  "Yelburga",
+
+  // =========================
+  // RAICHUR DISTRICT
+  // =========================
+  "Raichur",
+  "Devadurga",
+  "Lingasugur",
+  "Manvi",
+  "Sindhanur",
+
+  // =========================
+  // KALABURAGI DISTRICT
+  // =========================
+  "Kalaburagi",
+  "Aland",
+  "Afzalpur",
+  "Chincholi",
+  "Chitapur",
+  "Jevargi",
+  "Sedam",
+  "Shahabad",
+
+  // =========================
+  // YADGIR DISTRICT
+  // =========================
+  "Yadgir",
+  "Shahapur",
+  "Shorapur",
+
+  // =========================
+  // BIDAR DISTRICT
+  // =========================
+  "Bidar",
+  "Aurad",
+  "Basavakalyan",
+  "Bhalki",
+  "Humnabad",
+
+  // =========================
+  // CHIKKABALLAPUR DISTRICT
+  // =========================
+  "Chikkaballapur",
+  "Bagepalli",
+  "Chintamani",
+  "Gauribidanur",
+  "Gudibande",
+  "Sidlaghatta",
+
+  // =========================
+  // KOLAR DISTRICT
+  // =========================
+  "Kolar",
+  "Bangarapet",
+  "KGF",
+  "Malur",
+  "Mulbagal",
+  "Srinivaspur",
+
+  // =========================
+  // BENGALURU RURAL DISTRICT
+  // =========================
+  "Bengaluru Rural",
+  "Anekal",
+  "Devanahalli",
+  "Doddaballapur",
+  "Hoskote",
+  "Nelamangala",
+
+  // =========================
+  // BENGALURU URBAN DISTRICT
+  // =========================
+  "Bengaluru",
+
+  // =========================
+  // RAMANAGARA DISTRICT
+  // =========================
+  "Ramanagara",
+  "Channapatna",
+  "Kanakapura",
+  "Magadi",
+
+  // =========================
+  // TUMAKURU DISTRICT
+  // =========================
+  "Tumakuru",
+  "Gubbi",
+  "Koratagere",
+  "Kunigal",
+  "Madhugiri",
+  "Pavagada",
+  "Sira",
+  "Tiptur",
+  "Turuvekere",
+  "Chiknayakanhalli",
+
+  // =========================
+  // CHITRADURGA DISTRICT
+  // =========================
+  "Chitradurga",
+  "Challakere",
+  "Hiriyur",
+  "Holalkere",
+  "Hosadurga",
+  "Molakalmuru",
+
+  // =========================
+  // DAVANGERE DISTRICT
+  // =========================
+  "Davangere",
+  "Channagiri",
+  "Harihar",
+  "Honnali",
+  "Jagalur",
+
+  // =========================
+  // SHIVAMOGGA DISTRICT
+  // =========================
+  "Shivamogga",
+  "Bhadravati",
+  "Hosanagara",
+  "Sagara",
+  "Shikaripura",
+  "Soraba",
+  "Thirthahalli",
+
+  // =========================
+  // CHIKKAMAGALURU DISTRICT
+  // =========================
+  "Chikkamagaluru",
+  "Kadur",
+  "Koppa",
+  "Mudigere",
+  "Narasimharajapura",
+  "Sringeri",
+  "Tarikere",
+
+  // =========================
+  // HASSAN DISTRICT
+  // =========================
+  "Hassan",
+  "Alur",
+  "Arakalgud",
+  "Arasikere",
+  "Belur",
+  "Channarayapatna",
+  "Holenarasipura",
+  "Sakleshpur",
+
+  // =========================
+  // KODAGU DISTRICT
+  // =========================
+  "Madikeri",
+  "Kushalnagar",
+  "Ponnampet",
+  "Somwarpet",
+  "Virajpet",
+
+  // =========================
+  // MYSURU DISTRICT
+  // =========================
+  "Mysuru",
+  "H.D. Kote",
+  "Hunsur",
+  "Krishnarajanagara",
+  "Nanjangud",
+  "Periyapatna",
+  "Tirumakudalu Narasipura",
+
+  // =========================
+  // MANDYA DISTRICT
+  // =========================
+  "Mandya",
+  "Krishnarajapete",
+  "Maddur",
+  "Malavalli",
+  "Nagamangala",
+  "Pandavapura",
+  "Srirangapatna",
+
+  // =========================
+  // CHAMARAJANAGAR DISTRICT
+  // =========================
+  "Chamarajanagar",
+  "Gundlupet",
+  "Kollegal",
+
+  // =========================
+  // DAKSHINA KANNADA DISTRICT
+  // =========================
+  "Mangaluru",
+  "Bantwal",
+  "Belthangady",
+  "Moodbidri",
+  "Puttur",
+  "Sullia",
+
+  // =========================
+  // UDUPI DISTRICT
+  // =========================
+  "Udupi",
+  "Baindur",
+  "Karkala",
+  "Kundapura",
 ];
 
 const PRACTICE_AREAS = [
