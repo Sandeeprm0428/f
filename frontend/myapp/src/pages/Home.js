@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import AdvocatesList from "./AdvocatesList";
 import { getAdvocates } from "../data/Advocatesstore";
 import laptopImage from "../images/Laptop.png";
+import Chatbot from "./Chatbot";
+
+
 
 
 const PRACTICE_TYPES = [
@@ -224,6 +227,55 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* ── AI CHATBOT SECTION ── */}
+      <section className="lw-section lw-chatbot-section">
+        <div className="lw-section-inner" style={{textAlign:"center"}}>
+          <div className="lw-chatbot-banner">
+            <div className="lw-chatbot-banner-icon">🤖⚖️</div>
+            <h2 className="lw-chatbot-banner-title">AI Legal Assistant</h2>
+            <p className="lw-chatbot-banner-desc">
+              Ask our AI assistant to find advocates, navigate to any page, answer legal questions,
+              or open advocate profiles — all from one chat window.
+            </p>
+            <div className="lw-chatbot-demo-queries">
+              {[
+                "Find criminal lawyers in Delhi",
+                "Open profile of Adv. Priya Sharma",
+                "What is anticipatory bail?",
+                "Show me all family lawyers",
+                "Go to Bare Acts",
+              ].map(q=>(
+                <span key={q} className="lw-chatbot-demo-q">"{q}"</span>
+              ))}
+            </div>
+            <div className="lw-chatbot-banner-cta">
+              👉 Click the <strong>⚖️ button</strong> at the bottom-right corner to start chatting!
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 6: How it works ── */}
+      <section className="lw-section lw-how-section">
+        <div className="lw-section-inner">
+          <div className="lw-section-head" style={{textAlign:"center"}}>
+            <h2 className="lw-section-title">How Law4u Works</h2>
+            <p className="lw-section-sub">Get legal help in 4 simple steps</p>
+          </div>
+          <div className="lw-how-grid">
+            {HOW_IT_WORKS.map((step,i)=>(
+              <div key={step.step} className="lw-how-card">
+                <div className="lw-how-step">{step.step}</div>
+                <div className="lw-how-icon">{step.icon}</div>
+                <div className="lw-how-title">{step.title}</div>
+                <div className="lw-how-desc">{step.desc}</div>
+                {i<HOW_IT_WORKS.length-1 && <div className="lw-how-arrow">→</div>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── SECTION 7: FAQs ── */}
       <section className="lw-section">
@@ -353,6 +405,9 @@ export default function Home() {
           <p className="lw-footer-copy">© 2026 Advocates Hub. All rights reserved.</p>
         </div>
       </footer>
+      {/* ── FLOATING CHATBOT — renders on every page via App.js ── */}
+            <Chatbot />
+
     </div>
   );
 }

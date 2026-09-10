@@ -6,6 +6,8 @@ import { useState, useEffect, useMemo } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./AdvocateDashboard.css";
 import { getAdvocateById } from "../data/Advocatesstore";
+import Chatbot from "./Chatbot";
+
 
 const SESSION_KEY  = "law4u_advocate_id";
 const REQUESTS_KEY = "law4u_requests";
@@ -738,6 +740,8 @@ export default function AdvocateDashboard() {
         </main>
 
       </div>
+         {/* ── FLOATING CHATBOT — renders on every page via App.js ── */}
+            <Chatbot />
     </div>
   );
 }

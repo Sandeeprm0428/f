@@ -3,7 +3,259 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { getAdvocates } from "../data/Advocatesstore";
 import "./AdvocatesList.css";
 
-const CITIES = ["Bengaluru","Gokak","Delhi","Hyderabad","Kolkata","Pune","Ahmedabad","Jaipur","Lucknow","Chandigarh","Kochi","Bhopal","Nagpur","Surat"];
+const CITIES = [
+  // =========================
+  // A
+  // =========================
+  "Afzalpur",
+  "Alur",
+  "Aland",
+  "Ankola",
+  "Arakalgud",
+  "Arasikere",
+  "Athani",
+  "Aurad",
+  "Anekal",
+
+  // =========================
+  // B
+  // =========================
+  "Bagepalli",
+  "Bagalkot",
+  "Bailhongal",
+  "Baindur",
+  "Banahatti",
+  "Bangarapet",
+  "Bantwal",
+  "Basavana Bagewadi",
+  "Basavakalyan",
+  "Belagavi",
+  "Belthangady",
+  "Belur",
+  "Bhadravati",
+  "Bhalki",
+  "Bhatkal",
+  "Bilagi",
+  "Byadgi",
+  "Bengaluru",
+  "Bengaluru Rural",
+
+  // =========================
+  // C
+  // =========================
+  "Challakere",
+  "Chamarajanagar",
+  "Channagiri",
+  "Channapatna",
+  "Channarayapatna",
+  "Chikkaballapur",
+  "Chikkamagaluru",
+  "Chikkodi",
+  "Chiknayakanhalli",
+  "Chincholi",
+  "Chintamani",
+  "Chitapur",
+  "Chitradurga",
+
+  // =========================
+  // D
+  // =========================
+  "Dandeli",
+  "Davangere",
+  "Devanahalli",
+  "Devadurga",
+  "Dharwad",
+  "Doddaballapur",
+
+  // =========================
+  // G
+  // =========================
+  "Gadag",
+  "Gangavathi",
+  "Gauribidanur",
+  "Gokak",
+  "Gudibande",
+  "Gubbi",
+  "Gundlupet",
+
+  // =========================
+  // H
+  // =========================
+  "H.D. Kote",
+  "Hagaribommanahalli",
+  "Haliyal",
+  "Hanagal",
+  "Harihar",
+  "Hassan",
+  "Haveri",
+  "Holenarasipura",
+  "Holalkere",
+  "Honnavar",
+  "Hosanagara",
+  "Hospete",
+  "Hosadurga",
+  "Hoskote",
+  "Humnabad",
+  "Hukeri",
+  "Hunsur",
+  "Hungund",
+  "Hirekerur",
+
+  // =========================
+  // I
+  // =========================
+  "Ilkal",
+  "Indi",
+
+  // =========================
+  // J
+  // =========================
+  "Jamkhandi",
+  "Jevargi",
+  "Jagalur",
+
+  // =========================
+  // K
+  // =========================
+  "Kadur",
+  "Kagwad",
+  "Kalaburagi",
+  "Kalghatgi",
+  "Kanakapura",
+  "Karwar",
+  "Karkala",
+  "Khanapur",
+  "Kittur",
+  "Kolar",
+  "Kollegal",
+  "Koppa",
+  "Koratagere",
+  "Krishnarajanagara",
+  "Krishnarajapete",
+  "Kundapura",
+  "Kundgol",
+  "Kumta",
+  "Kushalnagar",
+  "Kushtagi",
+  "Kudachi",
+  "Kudligi",
+  "Kolar",
+  "KGF",
+
+  // =========================
+  // L
+  // =========================
+  "Lakshmeshwar",
+  "Lingasugur",
+
+  // =========================
+  // M
+  // =========================
+  "Maddur",
+  "Madikeri",
+  "Magadi",
+  "Malavalli",
+  "Malur",
+  "Manvi",
+  "Mangaluru",
+  "Mandya",
+  "Muddebihal",
+  "Mudhol",
+  "Mudigere",
+  "Mudalagi",
+  "Mundagod",
+  "Mundargi",
+  "Mulbagal",
+  "Mysuru",
+
+  // =========================
+  // N
+  // =========================
+  "Nagamangala",
+  "Nanjangud",
+  "Narasimharajapura",
+  "Navalgund",
+  "Nelamangala",
+  "Nippani",
+  "Nargund",
+
+  // =========================
+  // P
+  // =========================
+  "Pandavapura",
+  "Pavagada",
+  "Periyapatna",
+  "Ponnampet",
+  "Puttur",
+
+  // =========================
+  // R
+  // =========================
+  "Raibag",
+  "Raichur",
+  "Ramanagara",
+  "Ramdurg",
+  "Ranebennur",
+  "Ron",
+
+  // =========================
+  // S
+  // =========================
+  "Sagara",
+  "Sakleshpur",
+  "Sandalaga",
+  "Sandur",
+  "Sankeshwar",
+  "Savanur",
+  "Sedam",
+  "Shahabad",
+  "Shahapur",
+  "Shiggaon",
+  "Shikaripura",
+  "Shivamogga",
+  "Shorapur",
+  "Shirsi",
+  "Siddapur",
+  "Sindagi",
+  "Sindhanur",
+  "Sira",
+  "Siruguppa",
+  "Sirsi",
+  "Somwarpet",
+  "Srinivaspur",
+  "Sringeri",
+  "Srirangapatna",
+  "Sullia",
+
+  // =========================
+  // T
+  // =========================
+  "Tarikere",
+  "Thirthahalli",
+  "Tiptur",
+  "Tirumakudalu Narasipura",
+  "Tumakuru",
+  "Turuvekere",
+
+  // =========================
+  // U
+  // =========================
+  "Udupi",
+
+  // =========================
+  // V
+  // =========================
+  "Vijayapura",
+  "Virajpet",
+
+  // =========================
+  // Y
+  // =========================
+  "Yadgir",
+  "Yaragatti",
+  "Yellapur",
+  "Yelburga"
+];
 const PRACTICE_AREAS = ["Divorce","Criminal","Property","Cheque Bounce","Civil","GST","Tax","Corporate","Family","Labour","Consumer","Cyber","Immigration","Banking","Intellectual Property"];
 const POPULAR = ["Divorce","Criminal","Property","Cheque Bounce","Civil","GST","Tax"];
 const CATEGORY_PRACTICES = {
@@ -143,54 +395,44 @@ export default function AdvocatesList() {
     <div className="home-page">
       {/* ── Search Bar Section ── */}
       <section className="lw-search-section">
-        <p className="lw-search-headline">
-          Hire India's best and most trusted lawyers for District Court, High Court, and Supreme Court cases with Advocates Hub
-        </p>
-        <div className="lw-search-bar">
-          <div className="lw-search-field">
-            <span className="lw-search-field-icon">📍</span>
-            <select
-              value={city}
-              onChange={e => {
-                const nextCity = e.target.value;
-                setCity(nextCity);
-                setFilteredResults(filterAdvocates(nextCity, practice));
-                setShowAllAdvocates(false);
-              }}
-              className="lw-select"
-            >
-              <option value="">Select City</option>
-              {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
-            </select>
-          </div>
-          <div className="lw-search-field">
-            <span className="lw-search-field-icon">🏛️</span>
-            <select
-              value={practice}
-              onChange={e => {
-                const nextPractice = e.target.value;
-                setPractice(nextPractice);
-                setFilteredResults(filterAdvocates(city, nextPractice));
-                setShowAllAdvocates(false);
-              }}
-              className="lw-select"
-            >
-              <option value="">Select Practice Areas</option>
-              {PRACTICE_AREAS.map(a => <option key={a} value={a}>{a}</option>)}
-            </select>
-          </div>
-          <button className="lw-search-btn" onClick={handleSearch}>SEARCH</button>
-        </div>
-        <div className="lw-popular-searches">
-          <strong>Popular Searches: </strong>
-          {POPULAR.map((p, i) => (
-            <span key={p}>
-              <span className="lw-popular-tag" onClick={() => handlePopularClick(p)}>{p}</span>
-              {i < POPULAR.length - 1 && " , "}
-            </span>
-          ))}
-        </div>
-      </section>
+  <p className="lw-search-headline">
+    Hire India's best and most trusted lawyers for District Court, High Court, and Supreme Court cases with Advocates Hub
+  </p>
+  <div className="lw-search-bar">
+    <div className="lw-search-field">
+      <span className="lw-search-field-icon">📍</span>
+      <select
+        value={city}
+        onChange={e => setCity(e.target.value)} // Only updates state now
+        className="lw-select"
+      >
+        <option value="">Select City</option>
+        {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
+      </select>
+    </div>
+    <div className="lw-search-field">
+      <span className="lw-search-field-icon">🏛️</span>
+      <select
+        value={practice}
+        onChange={e => setPractice(e.target.value)} // Only updates state now
+        className="lw-select"
+      >
+        <option value="">Select Practice Areas</option>
+        {PRACTICE_AREAS.map(a => <option key={a} value={a}>{a}</option>)}
+      </select>
+    </div>
+    <button className="lw-search-btn" onClick={handleSearch}>SEARCH</button>
+  </div>
+  <div className="lw-popular-searches">
+    <strong>Popular Searches: </strong>
+    {POPULAR.map((p, i) => (
+      <span key={p}>
+        <span className="lw-popular-tag" onClick={() => handlePopularClick(p)}>{p}</span>
+        {i < POPULAR.length - 1 && " , "}
+      </span>
+    ))}
+  </div>
+</section>
 
       {/* ── Advocates List Section ── */}
       <section className="lw-section">

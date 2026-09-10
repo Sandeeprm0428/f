@@ -14,320 +14,258 @@ import { getClientByEmail, addClient } from "../data/Clientsstore";
 import "./Signup.css";
 
 // ── Data from JSON ────────────────────────────────────────────
-
 const CITIES = [
   // =========================
-  // BELAGAVI DISTRICT
+  // A
   // =========================
-  "Belagavi",
-  "Gokak",
-  "Mudalagi",
-  "Bailhongal",
-  "Ramdurg",
-  "Saundatti",
+  "Afzalpur",
+  "Alur",
+  "Aland",
+  "Ankola",
+  "Arakalgud",
+  "Arasikere",
   "Athani",
-  "Raibag",
-  "Chikkodi",
-  "Hukeri",
-  "Khanapur",
-  "Nippani",
-  "Kagwad",
-  "Sankeshwar",
-  "Sadalaga",
-  "Kudachi",
-  "Kittur",
-  "Yaragatti",
+  "Aurad",
+  "Anekal",
 
   // =========================
-  // BAGALKOT DISTRICT
+  // B
   // =========================
+  "Bagepalli",
   "Bagalkot",
-  "Jamkhandi",
-  "Mudhol",
-  "Badami",
-  "Hungund",
-  "Bilagi",
+  "Bailhongal",
+  "Baindur",
   "Banahatti",
-
-  // =========================
-  // VIJAYAPURA DISTRICT
-  // =========================
-  "Vijayapura",
+  "Bangarapet",
+  "Bantwal",
   "Basavana Bagewadi",
-  "Indi",
-  "Muddebihal",
-  "Sindagi",
+  "Basavakalyan",
+  "Belagavi",
+  "Belthangady",
+  "Belur",
+  "Bhadravati",
+  "Bhalki",
+  "Bhatkal",
+  "Bilagi",
+  "Byadgi",
+  "Bengaluru",
+  "Bengaluru Rural",
 
   // =========================
-  // DHARWAD DISTRICT
+  // C
   // =========================
+  "Challakere",
+  "Chamarajanagar",
+  "Channagiri",
+  "Channapatna",
+  "Channarayapatna",
+  "Chikkaballapur",
+  "Chikkamagaluru",
+  "Chikkodi",
+  "Chiknayakanhalli",
+  "Chincholi",
+  "Chintamani",
+  "Chitapur",
+  "Chitradurga",
+
+  // =========================
+  // D
+  // =========================
+  "Dandeli",
+  "Davangere",
+  "Devanahalli",
+  "Devadurga",
   "Dharwad",
-  "Hubli",
-  "Kalghatgi",
-  "Kundgol",
-  "Navalgund",
+  "Doddaballapur",
 
   // =========================
-  // GADAG DISTRICT
+  // G
   // =========================
   "Gadag",
-  "Nargund",
-  "Lakshmeshwar",
-  "Mundargi",
-  "Ron",
-
-  // =========================
-  // HAVERI DISTRICT
-  // =========================
-  "Haveri",
-  "Byadgi",
-  "Hanagal",
-  "Hirekerur",
-  "Ranebennur",
-  "Savanur",
-  "Shiggaon",
-
-  // =========================
-  // UTTARA KANNADA DISTRICT
-  // =========================
-  "Karwar",
-  "Ankola",
-  "Bhatkal",
-  "Dandeli",
-  "Haliyal",
-  "Honnavar",
-  "Kumta",
-  "Mundgod",
-  "Siddapur",
-  "Sirsi",
-  "Yellapur",
-
-  // =========================
-  // BALLARI DISTRICT
-  // =========================
-  "Ballari",
-  "Siruguppa",
-  "Sandur",
-
-  // =========================
-  // VIJAYANAGARA DISTRICT
-  // =========================
-  "Hospete",
-  "Hagaribommanahalli",
-  "Hoovina Hadagali",
-  "Kudligi",
-  "Harapanahalli",
-
-  // =========================
-  // KOPPAL DISTRICT
-  // =========================
-  "Koppal",
   "Gangavathi",
-  "Kushtagi",
-  "Yelburga",
-
-  // =========================
-  // RAICHUR DISTRICT
-  // =========================
-  "Raichur",
-  "Devadurga",
-  "Lingasugur",
-  "Manvi",
-  "Sindhanur",
-
-  // =========================
-  // KALABURAGI DISTRICT
-  // =========================
-  "Kalaburagi",
-  "Aland",
-  "Afzalpur",
-  "Chincholi",
-  "Chitapur",
-  "Jevargi",
-  "Sedam",
-  "Shahabad",
-
-  // =========================
-  // YADGIR DISTRICT
-  // =========================
-  "Yadgir",
-  "Shahapur",
-  "Shorapur",
-
-  // =========================
-  // BIDAR DISTRICT
-  // =========================
-  "Bidar",
-  "Aurad",
-  "Basavakalyan",
-  "Bhalki",
-  "Humnabad",
-
-  // =========================
-  // CHIKKABALLAPUR DISTRICT
-  // =========================
-  "Chikkaballapur",
-  "Bagepalli",
-  "Chintamani",
   "Gauribidanur",
+  "Gokak",
   "Gudibande",
-  "Sidlaghatta",
-
-  // =========================
-  // KOLAR DISTRICT
-  // =========================
-  "Kolar",
-  "Bangarapet",
-  "KGF",
-  "Malur",
-  "Mulbagal",
-  "Srinivaspur",
-
-  // =========================
-  // BENGALURU RURAL DISTRICT
-  // =========================
-  "Bengaluru Rural",
-  "Anekal",
-  "Devanahalli",
-  "Doddaballapur",
-  "Hoskote",
-  "Nelamangala",
-
-  // =========================
-  // BENGALURU URBAN DISTRICT
-  // =========================
-  "Bengaluru",
-
-  // =========================
-  // RAMANAGARA DISTRICT
-  // =========================
-  "Ramanagara",
-  "Channapatna",
-  "Kanakapura",
-  "Magadi",
-
-  // =========================
-  // TUMAKURU DISTRICT
-  // =========================
-  "Tumakuru",
   "Gubbi",
-  "Koratagere",
-  "Kunigal",
-  "Madhugiri",
-  "Pavagada",
-  "Sira",
-  "Tiptur",
-  "Turuvekere",
-  "Chiknayakanhalli",
+  "Gundlupet",
 
   // =========================
-  // CHITRADURGA DISTRICT
+  // H
   // =========================
-  "Chitradurga",
-  "Challakere",
-  "Hiriyur",
-  "Holalkere",
-  "Hosadurga",
-  "Molakalmuru",
-
-  // =========================
-  // DAVANGERE DISTRICT
-  // =========================
-  "Davangere",
-  "Channagiri",
+  "H.D. Kote",
+  "Hagaribommanahalli",
+  "Haliyal",
+  "Hanagal",
   "Harihar",
-  "Honnali",
+  "Hassan",
+  "Haveri",
+  "Holenarasipura",
+  "Holalkere",
+  "Honnavar",
+  "Hosanagara",
+  "Hospete",
+  "Hosadurga",
+  "Hoskote",
+  "Humnabad",
+  "Hukeri",
+  "Hunsur",
+  "Hungund",
+  "Hirekerur",
+
+  // =========================
+  // I
+  // =========================
+  "Ilkal",
+  "Indi",
+
+  // =========================
+  // J
+  // =========================
+  "Jamkhandi",
+  "Jevargi",
   "Jagalur",
 
   // =========================
-  // SHIVAMOGGA DISTRICT
+  // K
   // =========================
-  "Shivamogga",
-  "Bhadravati",
-  "Hosanagara",
-  "Sagara",
-  "Shikaripura",
-  "Soraba",
-  "Thirthahalli",
-
-  // =========================
-  // CHIKKAMAGALURU DISTRICT
-  // =========================
-  "Chikkamagaluru",
   "Kadur",
-  "Koppa",
-  "Mudigere",
-  "Narasimharajapura",
-  "Sringeri",
-  "Tarikere",
-
-  // =========================
-  // HASSAN DISTRICT
-  // =========================
-  "Hassan",
-  "Alur",
-  "Arakalgud",
-  "Arasikere",
-  "Belur",
-  "Channarayapatna",
-  "Holenarasipura",
-  "Sakleshpur",
-
-  // =========================
-  // KODAGU DISTRICT
-  // =========================
-  "Madikeri",
-  "Kushalnagar",
-  "Ponnampet",
-  "Somwarpet",
-  "Virajpet",
-
-  // =========================
-  // MYSURU DISTRICT
-  // =========================
-  "Mysuru",
-  "H.D. Kote",
-  "Hunsur",
-  "Krishnarajanagara",
-  "Nanjangud",
-  "Periyapatna",
-  "Tirumakudalu Narasipura",
-
-  // =========================
-  // MANDYA DISTRICT
-  // =========================
-  "Mandya",
-  "Krishnarajapete",
-  "Maddur",
-  "Malavalli",
-  "Nagamangala",
-  "Pandavapura",
-  "Srirangapatna",
-
-  // =========================
-  // CHAMARAJANAGAR DISTRICT
-  // =========================
-  "Chamarajanagar",
-  "Gundlupet",
+  "Kagwad",
+  "Kalaburagi",
+  "Kalghatgi",
+  "Kanakapura",
+  "Karwar",
+  "Karkala",
+  "Khanapur",
+  "Kittur",
+  "Kolar",
   "Kollegal",
+  "Koppa",
+  "Koratagere",
+  "Krishnarajanagara",
+  "Krishnarajapete",
+  "Kundapura",
+  "Kundgol",
+  "Kumta",
+  "Kushalnagar",
+  "Kushtagi",
+  "Kudachi",
+  "Kudligi",
+  "Kolar",
+  "KGF",
 
   // =========================
-  // DAKSHINA KANNADA DISTRICT
+  // L
   // =========================
+  "Lakshmeshwar",
+  "Lingasugur",
+
+  // =========================
+  // M
+  // =========================
+  "Maddur",
+  "Madikeri",
+  "Magadi",
+  "Malavalli",
+  "Malur",
+  "Manvi",
   "Mangaluru",
-  "Bantwal",
-  "Belthangady",
-  "Moodbidri",
+  "Mandya",
+  "Muddebihal",
+  "Mudhol",
+  "Mudigere",
+  "Mudalagi",
+  "Mundagod",
+  "Mundargi",
+  "Mulbagal",
+  "Mysuru",
+
+  // =========================
+  // N
+  // =========================
+  "Nagamangala",
+  "Nanjangud",
+  "Narasimharajapura",
+  "Navalgund",
+  "Nelamangala",
+  "Nippani",
+  "Nargund",
+
+  // =========================
+  // P
+  // =========================
+  "Pandavapura",
+  "Pavagada",
+  "Periyapatna",
+  "Ponnampet",
   "Puttur",
+
+  // =========================
+  // R
+  // =========================
+  "Raibag",
+  "Raichur",
+  "Ramanagara",
+  "Ramdurg",
+  "Ranebennur",
+  "Ron",
+
+  // =========================
+  // S
+  // =========================
+  "Sagara",
+  "Sakleshpur",
+  "Sandalaga",
+  "Sandur",
+  "Sankeshwar",
+  "Savanur",
+  "Sedam",
+  "Shahabad",
+  "Shahapur",
+  "Shiggaon",
+  "Shikaripura",
+  "Shivamogga",
+  "Shorapur",
+  "Shirsi",
+  "Siddapur",
+  "Sindagi",
+  "Sindhanur",
+  "Sira",
+  "Siruguppa",
+  "Sirsi",
+  "Somwarpet",
+  "Srinivaspur",
+  "Sringeri",
+  "Srirangapatna",
   "Sullia",
 
   // =========================
-  // UDUPI DISTRICT
+  // T
+  // =========================
+  "Tarikere",
+  "Thirthahalli",
+  "Tiptur",
+  "Tirumakudalu Narasipura",
+  "Tumakuru",
+  "Turuvekere",
+
+  // =========================
+  // U
   // =========================
   "Udupi",
-  "Baindur",
-  "Karkala",
-  "Kundapura",
+
+  // =========================
+  // V
+  // =========================
+  "Vijayapura",
+  "Virajpet",
+
+  // =========================
+  // Y
+  // =========================
+  "Yadgir",
+  "Yaragatti",
+  "Yellapur",
+  "Yelburga"
 ];
 
 const PRACTICE_AREAS = [

@@ -1,3 +1,5 @@
+// This is server.js file 
+// this file structere is backend/server.js 
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
