@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Adv. Chetan Chandaragi",
+    "name": "Adv. Priya Sharma",
     "city": "Gokak",
     "practiceArea": "Criminal",
     "speciality": "Criminal Law",
@@ -10,8 +10,8 @@
     "cases": 340,
     "fee": "₹2,500 / consult",
     "phone": "+91 98765 43210",
-    "email": "chetan.chandaragi@advocateshub.in",
-    "password": "Che@0428",
+    "email": "priya.sharma@advocateshub.in",
+    "password": "Pri@0428",
     "languages": [
       "English",
       "Hindi",
@@ -23,7 +23,7 @@
   },
   {
     "id": 2,
-    "name": "Adv. Vidvath Chandaragi",
+    "name": "Adv. Amit Verma",
     "city": "Gokak",
     "practiceArea": "Family",
     "speciality": "Family Law",
@@ -32,7 +32,7 @@
     "cases": 215,
     "fee": "₹2,000 / consult",
     "phone": "+91 98765 43211",
-    "email": "vidvath.chandaragi@advocateshub.in",
+    "email": "amit@gmail.com",
     "password": "Vid@0428",
     "languages": [
       "English",
@@ -45,7 +45,7 @@
   },
   {
     "id": 3,
-    "name": "Adv. Basavaraj Kotagi",
+    "name": "Adv. Sneha Nair",
     "city": "Gokak",
     "practiceArea": "Property",
     "speciality": "Property Law",
@@ -54,8 +54,8 @@
     "cases": 480,
     "fee": "₹3,000 / consult",
     "phone": "+91 98765 43212",
-    "email": "basavaraj.kotagi@advocateshub.in",
-    "password": "Bas@0428",
+    "email": "sneha.nair@advocateshub.in",
+    "password": "Sne@0428",
     "languages": [
       "English",
       "Hindi"
@@ -1718,5 +1718,41 @@
     "availability": "Not available",
     "bio": "kjcca",
     "avatar": "/images/manu.png"
+  },
+  {
+    "id": 83,
+    "name": "Deep P",
+    "city": "Dharwad",
+    "practiceArea": "Civil Law",
+    "speciality": "Civil Law",
+    "experience": "3–5 years",
+    "rating": 0,
+    "cases": 0,
+    "fee": "9000",
+    "phone": "9876545678",
+    "email": "d@gmail.com",
+    "password": "San@0428",
+    "languages": [],
+    "availability": "Not available",
+    "bio": "Hi",
+    "avatar": "/images/deep-p.png"
+  },
+  {
+    "id": 84,
+    "name": "Karna",
+    "city": "Athani",
+    "practiceArea": "Immigration",
+    "speciality": "Immigration",
+    "experience": "3–5 years",
+    "rating": 0,
+    "cases": 0,
+    "fee": "9000",
+    "phone": "4567876567",
+    "email": "karna@gmail.com",
+    "password": "San@0428",
+    "languages": [],
+    "availability": "Not available",
+    "bio": "j",
+    "avatar": "/images/karna.png"
   }
 ]
